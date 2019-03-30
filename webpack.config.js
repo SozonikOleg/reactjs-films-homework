@@ -2,38 +2,37 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-
 module.exports = {
   mode: 'development',
-  entry: [
-    './src/index.js',
-    'react-hot-loader/patch',
-    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-    'webpack/hot/only-dev-server',
-  ],
+  entry:
+    './index.js',
+    output: {
+      filename: '[name].bundle.js',
+      path: path.resolve(__dirname, 'dist'),
+       publicPath: '/'
+    },
   devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist'
-  },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'Output Management'
-    }),
+    new HtmlWebpackPlugin({  // Also generate a test.html
+      filename: 'index.html',
+      template: './src/components/Signature/index.html'
+    })
   ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-     publicPath: '/'
-  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.jsx?$/,
+        include: /node_modules/,
+        use: ['react-hot-loader/webpack'],
       }
-    ]
+    ],
+    
   },
   resolve: {
     extensions: [
