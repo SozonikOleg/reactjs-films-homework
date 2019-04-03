@@ -1,13 +1,11 @@
-const express = require('express');
 const webpack = require('webpack');
+const express = require('express');
+const webpackConfig = require('./webpack.config');
 const webpackDevMiddleware = require('webpack-dev-middleware');
-
-
 const app = express();
 const config = require('./webpack.config.js');
-const compiler = webpack(config);
+const compiler = webpack(webpackConfig);
 
-var webpackConfig = require('./webpack.config');
 
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
@@ -24,6 +22,8 @@ app.listen(3000, function () {
 app.use(require("webpack-dev-middleware")(compiler, {
     noInfo: true, publicPath: webpackConfig.output.publicPath
 }));
+
+// app.use(require("webpack-hot-middleware")(compiler));
 
 app.use(require('webpack-hot-middleware')(compiler, {
     log: false,
