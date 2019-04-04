@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import style from './Component2.module.scss'
-
+import style from './Component2.module.scss';
 
 class Hello extends Component {
   render () {
@@ -9,7 +8,7 @@ class Hello extends Component {
         <h1 className='five'> Bye </h1>
         <p className={style.five}> Hey!</p>
       </div>
-    )
+    );
   }
 } 
 
