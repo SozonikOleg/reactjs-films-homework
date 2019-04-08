@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "[![Build Status](https://travis-ci.com/SozonikOleg/reactjs-films-homework.svg?branch=master)](https://travis-ci.com/SozonikOleg/reactjs-films-homework)",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "exports-loader": "^0.7.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
@@ -21,6 +23,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "express": "^4.16.4",
+    "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
@@ -31,6 +34,7 @@
     "style-loader": "^0.23.1",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
+    "terser-webpack-plugin": "^1.2.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-middleware": "^3.6.1",
@@ -38,13 +42,12 @@
     "webpack-merge": "^4.2.1"
   },
   "scripts": {
-    "start": "webpack --config webpack.dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack/webpack.config.js --hot&node server.js",
-    "watch": "webpack --watch",
+    "start": "webpack --config webpack.dev.js && SET NODE_ENV=development & node server.js",
+    "build": "webpack --config webpack.prod.js",
+    "prod": "npm run build && SET NODE_ENV=production & node server.js",
     "server": "node server.js",
     "lint": "run eslint",
-    "terser": "terser"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
