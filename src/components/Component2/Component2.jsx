@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import style from './Component2.module.scss';
+import styles from './Component2.module.scss';
 
-class Hello extends Component {
+class Component2 extends Component {
   render () {
     return (
-      <div className={style.three}>
-        <h1 className='five'> Bye </h1>
-        <p className={style.five}> Hey!</p>
+      <div className={styles.three}>
+        <h1> Bye </h1>
       </div>
     );
   }
 } 
 
-export default Hello;
+export default Component2;

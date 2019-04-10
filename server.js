@@ -33,7 +33,7 @@ if(process.env.NODE_ENV.trim()==='development'){
   console.log('PROD!!!!!!!!!');
 }
 
-app.use('/g', express.static('./dist'));
+app.use('/', express.static('./dist'));
 
 // Serve the files on port 3000.
 app.listen(3000, () => {

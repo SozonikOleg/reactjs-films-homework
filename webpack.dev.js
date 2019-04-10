@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
-
 module.exports =  merge(common, {
   mode: 'development',
   context:path.join(__dirname, './'),
@@ -28,7 +27,7 @@ module.exports =  merge(common, {
     new HtmlWebpackPlugin({  // Also generate a test.html
       filename: 'index.html',
       template: './src/components/Component1/index.html'
-    })
+    }),
   ],
   module: {
     rules: [
@@ -36,6 +35,14 @@ module.exports =  merge(common, {
         test: /\.jsx?$/,
         include: /node_modules/,
         use: ['react-hot-loader/webpack']
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader', // creates style nodes from JS strings
+          'css-loader?modules', // translates CSS into CommonJS
+          'sass-loader' // compiles Sass to CSS, using Node Sass by default
+        ]
       },
     ]
   },
