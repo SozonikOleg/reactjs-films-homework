@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import styles from './Component2.module.scss';
+import styles from './Search.module.scss';
 
-class Component2 extends Component {
+
+class Search extends Component {
   render () {
     return (
       <div className={styles.three}>
-        <h1> Bye </h1>
+        <h1> Search </h1>    
       </div>
     );
   }
 } 
 
-export default Component2;
+export default Search;
