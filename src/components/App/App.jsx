@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
 import Component2 from '../Component2/Component2.jsx';
-import styles from './Component1.module.scss';
+import styles from './App.module.scss';
 
 class Welcome extends Component {
   render() {

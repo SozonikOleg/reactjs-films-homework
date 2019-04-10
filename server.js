@@ -3,14 +3,10 @@ const express = require('express');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const app = express();
 
-
-console.log('???????&&&&&&&&&&&&&&&&&&&&&&?', process.env.NODE_ENV);
-
 if(process.env.NODE_ENV.trim()==='development'){
   const config = require('./webpack.dev.js');
   const webpackConfig = require('./webpack.dev');
   const compiler = webpack(webpackConfig);
-  console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',"OLEG");
 
   app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath
@@ -28,12 +24,11 @@ if(process.env.NODE_ENV.trim()==='development'){
 
 } else{
   app.get('/', (req, res) => {
-    res.sendFile(`${__dirname}/dist/index.html`);
+    res.sendFile(`${__dirname}/build/index.html`);
   });
-  console.log('PROD!!!!!!!!!');
 }
 
-app.use('/', express.static('./dist'));
+app.use('/', express.static('./build'));
 
 // Serve the files on port 3000.
 app.listen(3000, () => {

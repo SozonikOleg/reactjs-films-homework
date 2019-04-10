@@ -55,7 +55,7 @@ module.exports =  merge.smart(common, {
       new ExtractTextPlugin("styles.css"),
       new HtmlWebpackPlugin({  // Also generate a test.html
         filename: 'index.html',
-        template: './src/components/Component1/index.html'
+        template: './src/components/App/index.html'
       }),
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output

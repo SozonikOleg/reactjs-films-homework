@@ -16,7 +16,7 @@ module.exports =  merge(common, {
   ],
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../build'),
     publicPath: '/'
   },
   watch:false,
@@ -26,7 +26,7 @@ module.exports =  merge(common, {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({  // Also generate a test.html
       filename: 'index.html',
-      template: './src/components/Component1/index.html'
+      template: './src/components/App/index.html'
     }),
   ],
   module: {

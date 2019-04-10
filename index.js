@@ -1,4 +1,4 @@
-import Welcome from './src/components/Component1/Component1.jsx';
+import Welcome from './src/components/App/App.jsx';
 import React from 'react';
 import {render} from 'react-dom';
 
