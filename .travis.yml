@@ -3,5 +3,5 @@ node_js:
   - "lts/*"
 
 script:
-  - yarn run lint
-  - yarn run test
+  - npm run lint
+  
