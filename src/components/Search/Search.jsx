@@ -11,7 +11,7 @@ class Search extends Component {
         </section >
         <section className={styles.form_search} >
           <form>
-            <input type="search" placeholder="Search" class="search" />
+            <input type="search" placeholder="the jungle book"  />
           </form>
         </section>
       </div >

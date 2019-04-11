@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader/root';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+
 import Header from '../Header';
 import styles from './App.module.scss';
 import '../../image/cover-image.jpg';
+
+library.add(faStar)
 
 class App extends Component {
   render() {
@@ -10,7 +17,6 @@ class App extends Component {
       <div className={styles.three}>
         <Header />
         <h1 className="foure">Hello {this.props.name}!!!</h1>
-        <p className="five">Lorem </p>
       </div>
     );
   }

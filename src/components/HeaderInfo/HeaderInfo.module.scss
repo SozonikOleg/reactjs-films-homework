@@ -1,0 +1,96 @@
+.headerInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 590px;
+    color:white;
+}
+
+.left_item {
+    margin: 200px 30px 0px 175px;
+    color: white;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.list {
+    display: -webkit-inline-box;
+    border-right: 3px solid white;
+    font-size: 20px;
+    list-style-type: none;
+    li {
+        margin-right: 10px;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+.list_star {
+    display: flex;
+    
+    padding-top: 50px;
+}
+
+.star {
+    font-size: 30px;
+    color:#09ade3;
+    margin-right: 10px;
+}
+
+.time {
+    padding-left: 10px;
+}
+
+.counter {
+    width: 7%;
+    padding: 3px;
+    background: #0a0e0f;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid #09ade3;;
+    font-size: 20px;
+}
+
+//start right item//
+
+.right_item {
+    margin-right: 20px;
+    width: 25%;
+    color: white;
+}
+
+.span {
+    margin-left: 50px;
+    padding: 30px;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+    font-size: 20px;
+}
+
+.bottons {
+    margin-top: 20px;
+}
+
+.bottons_left {
+    width: 35%;
+    padding: 10px;
+    margin-right: 75px;
+    background: #09ade3;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+.bottons_right {
+    width: 35%;
+    padding: 10px;
+    background: #0a0e0f;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+    font-size: 20px;
+}
