@@ -9,17 +9,15 @@ import Header from '../Header';
 import styles from './App.module.scss';
 import '../../image/cover-image.jpg';
 
+
 library.add(faStar)
 
-class App extends Component {
-  render() {
-    return (
-      <div className={styles.three}>
-        <Header />
-        <h1 className="foure">Hello {this.props.name}!!!</h1>
-      </div>
-    );
-  }
+
+function App() {
+  return <div className={styles.three}>
+    <Header />
+    <h1 className="foure">Hello !!!</h1>
+  </div>;
 }
 
 export default hot(App);
