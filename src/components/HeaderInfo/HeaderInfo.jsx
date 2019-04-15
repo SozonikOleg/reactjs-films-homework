@@ -19,12 +19,12 @@ class HeaderInfo extends Component {
           <h2 className={styles.title} >The jungle book</h2>
           <div className={styles.nav}>
             <ul className={styles.list}>
-              {links.map((link) => <li><a href="#">{link}</a></li>)}
+              {links.map((link, index) => <li key={index}><a href="#">{link}</a></li>)}
             </ul>
             <span className={styles.time}>1h 46 min</span>
           </div>
           <div className={styles.list_star}>
-            {icons.map((star) => < FontAwesomeIcon icon={star} className={styles.star} />)}
+            {icons.map((star, index) => <li key={index}>< FontAwesomeIcon icon={star} className={styles.star} /></li>)}
             <div className={styles.counter}>4.8</div>
           </div>
         </section >

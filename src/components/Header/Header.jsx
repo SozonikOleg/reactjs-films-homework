@@ -4,10 +4,15 @@ import Search from '../Search/Search';
 import HeaderInfo from '../HeaderInfo';
 
 function Header() {
-  return <div className={styles.three}>
+  return (
+  <div className={styles.three}>
     < Search />
-    < HeaderInfo />
+    < HeaderInfo /> 
   </div>
+  )
 }
 
+
 export default Header;
+
+// export default Header;

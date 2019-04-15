@@ -1,23 +1,28 @@
-import React, { Component } from 'react';
-import { hot } from 'react-hot-loader/root';
-
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-
-import Header from '../Header';
+import React from 'react';
 import styles from './App.module.scss';
-import '../../image/cover-image.jpg';
-
-
-library.add(faStar)
-
+import { hot } from 'react-hot-loader/root';
+import Header from '../Header';
+import Main from '../Main';
+import store from '../../modules/store';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 
 function App() {
   return <div className={styles.three}>
     <Header />
-    <h1 className="foure">Hello !!!</h1>
+    <Main />
   </div>;
 }
 
+
+render(
+  <Provider store= {store}>
+    < App />
+  </Provider>,
+  document.getElementById('root')
+);
+
+// export default hot(App);
 export default hot(App);
+
+
