@@ -1,9 +1,9 @@
-import Welcome from './src/components/App/App.jsx';
+import App from './src/components/App/App.jsx';
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 
 render(
-  < Welcome name = 'Oleg'/>,
+  < App name='Oleg' />,
   document.getElementById('root')
 );
 
