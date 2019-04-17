@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './Main.module.scss';
-import MovieList from '../MovieList';
+import MainList from '../MainList';
+
 
 function Main() {
-  return <div className={styles.three}>
-    < MovieList />
+  return <div className={styles.movie_list}>
+    <MainList />
   </div>;
 }
-
 
 export default Main;

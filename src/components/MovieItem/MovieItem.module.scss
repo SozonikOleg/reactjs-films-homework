@@ -1,0 +1,44 @@
+.movie_item {
+    border: 1px solid #09ade3;
+    color: #09ade3;
+    border-radius: 10px;
+}
+
+.movie_wrapper {
+    width:24.46%;
+    margin: 5px;
+}
+
+.movie_main {
+    height: 400px;
+    border: 1px solid grey;
+}
+
+.movie_description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    margin: 20px
+}
+
+.movie_genre {
+    li {
+        list-style-type: none;
+        display: inline-block;
+        margin:10px;
+        font-size: 20px;
+    }
+}
+
+.movie_rating {
+    width: 7%;
+    height: 4%;
+    padding: 3px;
+    margin: 40px 60px 0px 0px;; 
+    border-radius: 5px;
+    color: #09ade3;
+    border: 1px solid #09ade3;;
+    font-size: 20px;
+}

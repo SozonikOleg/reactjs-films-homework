@@ -1,4 +1,6 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 
 function counter(
   state = {
@@ -17,6 +19,6 @@ function counter(
   }
 }
 
-const store = createStore(counter);
+const store = createStore(counter, composeWithDevTools(applyMiddleware(thunk)));
 
 export default store;
