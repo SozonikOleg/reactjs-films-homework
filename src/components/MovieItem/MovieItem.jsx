@@ -3,12 +3,11 @@ import styles from './MovieItem.module.scss';
 import { connect } from 'react-redux';
 
 function MovieItem(props) {
+  const url = `https://image.tmdb.org/t/p/w400${props.background}`
   return (
   <div className={styles.movie_wrapper}>
     <section className={styles.movie_item}>
-      <div className={styles.movie_main}>
-        image
-      </div>
+        <img src={url} alt="" className={styles.movie_img}/>
       <div className={styles.movie_description}>
         <div className="movie-info">
           <h2 className={styles.title}>Name movie</h2>

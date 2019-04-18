@@ -17,7 +17,9 @@ class MainList1 extends React.Component {
       this.setState({
         items: response.items
       });
+      console.log('___', response.items)
     });
+    console.log('___', this.state.items)
   }
 
   // onClick = ()=>{
@@ -31,7 +33,7 @@ class MainList1 extends React.Component {
   render() {  
     return (
       <div className = {styles.movie_list}>
-            {this.state.items.map(e => < MovieItem test={e.title} id={e.id}/>)}
+            {this.state.items.map(e => < MovieItem test={e.title} background={e.poster_path}/>)}
         {/* <button onClick={this.onClick}>click</button> */}
         < MovieItem/>
       </div>
