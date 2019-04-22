@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Search.module.scss';
+import { connect } from 'react-redux';
+import { getSearchData } from '../../action/search'
 
 
 
@@ -12,11 +14,15 @@ class Search extends Component {
   }
 
   hadleChangeInput = (event) => {
-    console.log(event);
-      
     this.setState({
       searchValue: event.target.value,
     })
+  }
+
+  search(e){
+    e.preventDefault();
+    this.props.postSearch(this.search.value);
+    this.search.value = '';
   }
 
   render() {
@@ -27,12 +33,10 @@ class Search extends Component {
         </section >
         <section className={styles.form_search} >
           <form>
-            <input 
-              type="search" 
-              placeholder="the jungle book"
-              // value={this.state.searchValue}
-              // onClick={this.hadleChangeInput}
-              />
+            <div className={styles.search_wrapper}>
+              <input type="search" placeholder="the jungle book" ref={(input)=>{this.search = input}}/>
+              <button className={styles.search_submit} onClick={this.search.bind(this)}></button>
+            </div>
           </form>
         </section>
       </div >
@@ -40,4 +44,11 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default connect(
+  state => ({}),
+  dispatch =>({
+    postSearch:(SearchValue) => {
+      dispatch(getSearchData(SearchValue))
+    }
+  })
+)(Search);

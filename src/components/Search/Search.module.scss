@@ -18,6 +18,7 @@
 input:focus, input:active {
     outline: none !important;
 }
+
 input {
 	outline: none;
 }
@@ -29,39 +30,48 @@ input[type=search] {
 	font-size: 100%;
 	color: white;
 }
+
+.search_submit {
+	width: 30px;
+	height: 30px;
+	background:url('../../image/search.png') no-repeat center;
+	border: 0px;
+	padding: 12px 24px;
+}
+
+.search_wrapper {
+	border: solid 3px white;	
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
 	display: none; 
 }
 
-
 input[type=search] {
-	background: url('../../image/search.png') no-repeat 420px center;
+	background: no-repeat 420px center;
 	background-color: transparent;
-	border: solid 3px white;
+	border: none;
 	padding: 12px 10px 9px 9px;
 	width: 450px;
-	
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-	
 	-webkit-transition: all .5s;
 	-moz-transition: all .5s;
 	transition: all .5s;
 }
+
 input[type=search]:focus {
-	background: url('../../image/search.png') no-repeat 500px center;
+	background: no-repeat 500px center;
 	width: 530px;
 	border-color: white;
 	color: white;
-	font-size: 20px;
 
 	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
 	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
 	box-shadow: 0 0 5px rgba(109,207,246,.5);
 }
-
 
 input:-moz-placeholder {
 	color: white;

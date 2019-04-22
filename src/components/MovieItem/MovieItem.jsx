@@ -10,7 +10,7 @@ function MovieItem(props) {
         <img src={url} alt="" className={styles.movie_img}/>
       <div className={styles.movie_description}>
         <div className="movie-info">
-          <h2 className={styles.title}>Name movie</h2>
+          <h2 className={styles.title}>{props.itemData}</h2>
           <ul className={styles.movie_genre}>
             <li>Action</li>
             <li>Drama</li>
@@ -18,7 +18,7 @@ function MovieItem(props) {
           </ul> 
         </div>
         <div className={styles.movie_rating}>
-          4.8
+          {props.vote_average}
         </div>
       </div>
     </section>

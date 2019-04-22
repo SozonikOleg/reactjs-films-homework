@@ -1,26 +1,27 @@
 import React from 'react';
 import styles from './MainList.module.scss';
 import MovieItem from '../MovieItem';
+import { connect } from 'react-redux';
 
-class MainList1 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: []
-    };
-  }
+class MainList extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     items: this.props.dataSearch
+  //   };
+  // }
   
-  componentDidMount() {
-   fetch("https://api.themoviedb.org/3/list/3?api_key=d930c628f4aadc8b0b06359a9cf7230d&language=en-US")
-   .then(res => res.json())
-   .then( response => { 
-      this.setState({
-        items: response.items
-      });
-      console.log('___', response.items)
-    });
-    console.log('___', this.state.items)
-  }
+  // componentDidMount() {
+  //  fetch("https://api.themoviedb.org/3/list/3?api_key=d930c628f4aadc8b0b06359a9cf7230d&language=en-US")
+  //  .then(res => res.json())
+  //  .then( response => { 
+  //     this.setState({
+  //       items: response.items
+  //     });
+  //     // console.log('___', response.items)
+  //   });
+  //   // console.log('___', this.state.items)
+  // }
 
   // onClick = ()=>{
   //   this.setState((state, props) => {
@@ -30,15 +31,24 @@ class MainList1 extends React.Component {
   //   });
   // }
 
+  a(){
+    console.log(this.props.dataSearch);
+  }
+
   render() {  
     return (
       <div className = {styles.movie_list}>
-            {this.state.items.map(e => < MovieItem test={e.title} background={e.poster_path}/>)}
-        {/* <button onClick={this.onClick}>click</button> */}
+            {this.props.dataSearch.map(e => < MovieItem vote_average={e.vote_average} itemData={e.title}  background={e.poster_path}/>)}
         < MovieItem/>
       </div>
     )
   }
 }
 
-export default MainList1;
+export default connect(
+  state => ({
+    dataSearch: state.search
+  }),
+  dispatch => ({
+  })
+)(MainList);
