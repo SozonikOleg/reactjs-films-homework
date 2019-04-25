@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
-import styles from './Search.module.scss';
 import { connect } from 'react-redux';
-import { getSearchData } from '../../action/search'
-
-
+import styles from './Search.module.scss';
+import { getSearchData } from '../../action/search';
 
 class Search extends Component {
   constructor(prop) {
     super(prop);
     this.state = {
       searchValue: '',
-    }
+    };
   }
 
-  hadleChangeInput = (event) => {
+  hadleChangeInput = event => {
     this.setState({
       searchValue: event.target.value,
-    })
-  }
+    });
+  };
 
-  search(e){
+  search(e) {
     e.preventDefault();
     this.props.postSearch(this.search.value);
     this.search.value = '';
@@ -27,28 +25,34 @@ class Search extends Component {
 
   render() {
     return (
-      < div className={styles.three1}>
+      <div className={styles.three1}>
         <section className={styles.logo}>
-          <h2> Film</ h2>
-        </section >
-        <section className={styles.form_search} >
+          <h2> Film</h2>
+        </section>
+        <section className={styles.form_search}>
           <form>
             <div className={styles.search_wrapper}>
-              <input type="search" placeholder="the jungle book" ref={(input)=>{this.search = input}}/>
-              <button className={styles.search_submit} onClick={this.search.bind(this)}></button>
+              <input
+                type="search"
+                placeholder="the jungle book"
+                ref={input => {
+                  this.search = input;
+                }}
+              />
+              <button className={styles.search_submit} onClick={this.search.bind(this)} />
             </div>
           </form>
         </section>
-      </div >
-    )
+      </div>
+    );
   }
 }
 
 export default connect(
   state => ({}),
-  dispatch =>({
-    postSearch:(SearchValue) => {
-      dispatch(getSearchData(SearchValue))
-    }
-  })
+  dispatch => ({
+    postSearch: SearchValue => {
+      dispatch(getSearchData(SearchValue));
+    },
+  }),
 )(Search);

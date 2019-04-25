@@ -7,22 +7,25 @@ import store from '../../modules/store';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
-function App() {
-  return <div className={styles.three}>
-    <Header />
-    <Main />
-  </div>;
-}
+class App extends React.Component {
 
+  render() {
+    return (
+      <div className={styles.three}>
+        <Header />
+        <Main />
+      </div>
+    );
+  }
+}
 
 render(
   <Provider store= {store}>
-    < App />
+    <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
-// export default hot(App);
 export default hot(App);
 
 

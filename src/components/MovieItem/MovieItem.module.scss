@@ -1,30 +1,73 @@
 .movie_item {
+    height: 550px;
     color: #09ade3;
-    border-radius: 10px;
+    position: relative;
+    .movie_hover {
+        z-index: 2;
+    }
+    .movie_img {
+        height: 440px;
+        width: 100%;
+        position: relative;
+        text-align: center;
+    }
+    .background_img {
+        background: black;
+        text-align: -webkit-center;
+    }
 }
 
 .movie_wrapper {
-    width:24.45%;
-    margin: 5px;
+    width:22.1%;
+    margin: 27px;
     background-color: white;
-    border-radius: 10px;
 }
 
-.movie_main {
-    border: 1px solid grey;
+// ************start hover movie item****************
+
+.movie_hover {
+    display: none;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 115px;
+    color: white;
 }
 
-.movie_img {
-    width:100%;
-    height: 440px;
-    border-radius: 10px 10px 0px 0px;
+.hover_button_play {
+    width: 96px;
+    height: 96px;
+    background: url('../../image/play96.png') no-repeat center;
+    border: 0px;
+    margin-top: 20px;
 }
+
+.hover_watch {
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.hover_button_view {
+    width: 35%;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+// ************the end hover movie item****************
 
 .movie_description {
     display: flex;
     justify-content: space-between;
     background-color: white;
-    border-radius: 0px 0px 10px 10px;
+
 }
 
 .title {
@@ -47,9 +90,69 @@
     height: 4%;
     padding: 3px;
     margin: 40px 60px 0px 0px;; 
-    border-radius: 5px;
     color: #09ade3;
     border: 1px solid #09ade3;;
     font-size: 20px;
     text-align: center;
+}
+
+//start discription state//
+
+.discription_hover {
+    background-color: rgba(0,0,0,0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 550px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    top: 0px;
+    .button_close {
+        margin: 15px;
+        width: 30px;
+        height: 30px;
+    }
+    .discription_title {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.button_watch {  
+    width: 40%;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-size: 20px;
+    margin: 61px 0px 0px 90px;
+}
+
+.main {
+    padding: 15px;
+    color: white;
+}
+
+.img_discription {
+    opacity: 0.3;
+    height: 550px;
+    z-index: 2;
+    position: absolute;
+}
+
+.button_close {
+    background:url('../../image/iconclose.png') no-repeat center;
+    border: none;
+    padding: 12px 12px;
+}
+
+.vote_average {
+    border: 2px solid white;
+    height: 20px;
+    width: 25px;
+    padding: 5px;
+    margin: 30px 30px;
 }
