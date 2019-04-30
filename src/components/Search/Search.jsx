@@ -17,9 +17,9 @@ class Search extends Component {
     });
   };
 
-  search(e) {
+  searchMovies = (e) => {
     e.preventDefault();
-    this.props.postSearch(this.search.value);
+    this.props.postSearch(this.state.searchValue);
     this.search.value = '';
   }
 
@@ -35,11 +35,10 @@ class Search extends Component {
               <input
                 type="search"
                 placeholder="the jungle book"
-                ref={input => {
-                  this.search = input;
-                }}
+                value={this.state.searchValue}
+                onChange={this.hadleChangeInput}
               />
-              <button className={styles.search_submit} onClick={this.search.bind(this)} />
+              <button className={styles.search_submit} onClick={this.searchMovies} />
             </div>
           </form>
         </section>

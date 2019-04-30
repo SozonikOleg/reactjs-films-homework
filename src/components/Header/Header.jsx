@@ -5,11 +5,11 @@ import HeaderInfo from '../HeaderInfo';
 
 function Header() {
   return (
-  <div className={styles.three}>
-    < Search />
-    < HeaderInfo /> 
-  </div>
-  )
+    <div className={styles.three}>
+      <Search />
+      <HeaderInfo />
+    </div>
+  );
 }
 
 export default Header;
