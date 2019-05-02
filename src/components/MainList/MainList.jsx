@@ -16,7 +16,7 @@ class MainList extends React.Component {
             dataItem={item}
             vote_average={item.vote_average}
             itemData={item.title}
-            background={item.poster_path}
+            background={item.backdrop_path}
             id={item.id}
           />
         )}

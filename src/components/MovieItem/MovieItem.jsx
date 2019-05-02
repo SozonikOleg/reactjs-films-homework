@@ -10,7 +10,7 @@ class MovieItem extends Component {
     super(props);
     this.state = {
       itemState: true,
-      hoverState: false,
+      // hoverState: false,
       discriptionState: false,
       isModalOpen: false
     };
@@ -22,17 +22,8 @@ class MovieItem extends Component {
 
   ClickViewButton() {
     this.setState({ isOpepned: !this.state.isOpepned });
-    this.setState({ hoverState: false });
     this.setState({ discriptionState: true });
-    this.setState({ itemState: false });;
-  }
-
-  MouseMove() {
-    this.setState({ hoverState: true });
-  }
-
-  MouseOut() {
-    this.setState({ hoverState: false });
+    this.setState({ itemState: false });
   }
 
   closeDiscription() {
@@ -43,43 +34,30 @@ class MovieItem extends Component {
   toggleModal = () => {
     this.setState(state => ({isModalOpen: !state.isModalOpen}));
     this.props.returnId(this.props.id);
+    this.setState({ discriptionState: false })
+    this.setState({ itemState: true })
   };
 
   render() {
     const url = `https://image.tmdb.org/t/p/w400${this.props.background}`;
     const dataItem = this.props.dataItem;
     
-    let hoverSelector;
-
-    if (this.state.hoverState) {
-      hoverSelector = (
-        <div className={styles.background_img}>
-          <img src={url} style={{ opacity: 0.3 }} className={styles.movie_img} />
-          <div className={styles.movie_hover}>
-            <button onClick={this.toggleModal} className={styles.hover_button_play} />
-            <span className={styles.hover_watch}>Watch Now</span>
-            <button onClick={this.ClickViewButton.bind(this)} className={styles.hover_button_view}>View Info</button>
-          </div>
-        </div>
-      );
-    } else {
-      hoverSelector = (
-        <div className={styles.background_img}>
-          <img src={url} alt="" className={styles.movie_img} />
-        </div>
-      );
-    }
-
     let itemState;
 
     if(this.state.itemState){
       itemState = (
         <section 
-          onMouseEnter={this.MouseMove.bind(this)} 
-          onMouseLeave={this.MouseOut.bind(this)} 
           className={styles.movie_item}
         >
-          {hoverSelector}
+          <div className={styles.background_img}>
+            <img src={url} className={styles.movie_img} />
+            <div className={styles.movie_hover}>
+              <button onClick={this.toggleModal} className={styles.hover_button_play} />
+              <span className={styles.hover_watch}>Watch Now</span>
+              <button onClick={this.ClickViewButton.bind(this)} className={styles.hover_button_view}>View Info</button>
+            </div>
+          </div>
+
           <div className={styles.movie_description}>
             <div className="movie-info">
               <h2 className={styles.title}>{this.props.itemData}</h2>
@@ -128,20 +106,17 @@ class MovieItem extends Component {
       <div className={styles.movie_wrapper}>
         {itemState}
         {discriptionState}
-        <main>
           {this.state.isModalOpen &&
-              <Modal onClose={this.toggleModal}>
+              <Modal id={this.props.id} onClose={this.toggleModal}>
               </Modal> 
           }
-        </main> 
       </div>
     );
   }
 }
 
 export default connect(
-  state => ({
-  }),
+  state => ({}),
   dispatch => ({
     returnId: id => {
       dispatch(getDataTrailer(id));
@@ -149,3 +124,4 @@ export default connect(
   }),
 )(MovieItem);
 
+// export default MovieItem;
