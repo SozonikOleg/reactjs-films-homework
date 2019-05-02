@@ -12,10 +12,12 @@ class MainList extends React.Component {
       <div className={styles.movie_list}>
         {this.props.dataSearch.map(item => 
           <MovieItem
+            key={item.id}
             dataItem={item}
             vote_average={item.vote_average}
             itemData={item.title}
             background={item.poster_path}
+            id={item.id}
           />
         )}
       </div>

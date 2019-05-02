@@ -15,7 +15,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test eslint --debug src/"
+      "pre-commit": "npm test eslint --debug src/",
+      "pre-push": "npm run test"
     }
   },
   "jest": {

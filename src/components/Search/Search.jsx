@@ -20,7 +20,7 @@ class Search extends Component {
   searchMovies = (e) => {
     e.preventDefault();
     this.props.postSearch(this.state.searchValue);
-    this.search.value = '';
+    this.value = '';
   }
 
   render() {
@@ -38,7 +38,7 @@ class Search extends Component {
                 value={this.state.searchValue}
                 onChange={this.hadleChangeInput}
               />
-              <button className={styles.search_submit} onClick={this.searchMovies} />
+              <button className={styles.search_submit} onClick={this.searchMovies.bind(this)} />
             </div>
           </form>
         </section>

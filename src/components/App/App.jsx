@@ -10,28 +10,11 @@ import { hot } from 'react-hot-loader/root';
 
 
 class App extends React.Component {
-state = {
-  isModalOpen: false
-};
-
-toggleModal = () => {
-  this.setState(state => ({isModalOpen: !state.isModalOpen}));
-  console.log("state", this.state.isModalOpen)
-};
-
-
   render() {
     return (
       <div className={styles.three}>
         <Header />
         <Main />
-        <main>
-          {this.state.isModalOpen &&
-              <Modal onClose={this.toggleModal}>
-              </Modal> 
-          }
-        </main> 
-        <button onClick={this.toggleModal}>Open</button>
       </div>
     );
   }

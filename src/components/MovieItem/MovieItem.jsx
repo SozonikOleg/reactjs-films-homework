@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import styles from './MovieItem.module.scss';
 import Modal from '../Modal/Modal'
+import { connect } from 'react-redux';
+import { getDataTrailer } from '../../action/getDataTrailer';
 
 class MovieItem extends Component {
   constructor(props) {
@@ -40,7 +42,7 @@ class MovieItem extends Component {
 
   toggleModal = () => {
     this.setState(state => ({isModalOpen: !state.isModalOpen}));
-    console.log("state", this.state.isModalOpen)
+    this.props.returnId(this.props.id);
   };
 
   render() {
@@ -137,5 +139,13 @@ class MovieItem extends Component {
   }
 }
 
+export default connect(
+  state => ({
+  }),
+  dispatch => ({
+    returnId: id => {
+      dispatch(getDataTrailer(id));
+    },
+  }),
+)(MovieItem);
 
-export default MovieItem;
