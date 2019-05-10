@@ -1,10 +1,10 @@
 import React from 'react';
+import { render } from 'react-dom';
 import styles from './App.module.scss';
-import Modal from '../Modal/Modal'
+import Modal from '../Modal/Modal';
 import Header from '../Header';
 import Main from '../Main';
 import store from '../../modules/store';
-import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { hot } from 'react-hot-loader/root';
 
@@ -21,7 +21,7 @@ class App extends React.Component {
 }
 
 render(
-  <Provider store= {store}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root'),

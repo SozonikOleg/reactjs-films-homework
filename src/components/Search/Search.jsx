@@ -20,7 +20,6 @@ class Search extends Component {
   searchMovies = (e) => {
     e.preventDefault();
     this.props.postSearch(this.state.searchValue);
-    this.value = '';
   }
 
   render() {
