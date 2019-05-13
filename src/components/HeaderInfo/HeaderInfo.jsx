@@ -13,6 +13,8 @@ const icons = ['star', 'star', 'star', 'star', 'star']
 
 class HeaderInfo extends Component {
   render() {
+    console.log('HeaderInfo',this.props.randomItem)
+    const itemMovie=this.props.randomItem;
     return (
       < div className={styles.headerInfo}>
         <section className={styles.left_item}>

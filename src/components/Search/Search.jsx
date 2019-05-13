@@ -11,7 +11,11 @@ class Search extends Component {
     };
   }
 
-  hadleChangeInput = event => {
+  componentDidMount() {
+    this.clearForm();
+  }
+
+  hadleChangeInput = (event) => {
     this.setState({
       searchValue: event.target.value,
     });
@@ -20,6 +24,14 @@ class Search extends Component {
   searchMovies = (e) => {
     e.preventDefault();
     this.props.postSearch(this.state.searchValue);
+    this.clearForm();
+  }
+
+  clearForm = () => {
+    document.getElementById("myForm").reset(); 
+    this.setState({
+      searchValue: ''
+    })
   }
 
   render() {
@@ -29,7 +41,7 @@ class Search extends Component {
           <h2> Film</h2>
         </section>
         <section className={styles.form_search}>
-          <form>
+          <form id="myForm">
             <div className={styles.search_wrapper}>
               <input
                 type="search"

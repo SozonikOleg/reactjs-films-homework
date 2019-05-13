@@ -10,7 +10,6 @@
     "server": "node server.js",
     "lint": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
-    "prettier": "prettier --write src/**/*.js",
     "test": "jest"
   },
   "husky": {
@@ -45,6 +44,8 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "exports-loader": "^0.7.0",
     "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.8.4",
     "react-redux": "^7.0.2",
     "react-test-renderer": "^16.8.6",
     "redux": "^4.0.1",
@@ -88,8 +89,6 @@
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "prettier": "^1.16.4",
-    "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.8.4",
     "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.5.0",
     "sass-loader": "^7.1.0",
