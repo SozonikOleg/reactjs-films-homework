@@ -71,6 +71,31 @@
     font-size: 20px;
 }
 
+@media (min-width: 1200px){
+    .right_item {
+        width: 35%;
+    } 
+}
+
+@media (min-width: 960px){
+    .right_item {
+        width: 40%;
+    }
+    .span {
+        margin-left: 30px;
+        padding: 10px;
+    }
+    .list_star{
+        padding-top: 20px;
+    }
+    .left_item{
+        margin: 240px 30px 0px 50px;
+    }
+    .right_item{
+        margin-top: 45px;
+    }
+}
+
 .bottons {
     margin-top: 20px;
 }

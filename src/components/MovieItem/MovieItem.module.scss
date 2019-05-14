@@ -23,6 +23,20 @@
     background-color: white;
 }
 
+@media (min-width: 1200px){
+    .movie_wrapper {
+        width:28.1%;
+        margin: 30px;
+    }
+}
+
+@media (min-width: 960px){
+    .movie_wrapper {
+        width: 43%;
+        margin: 32px;
+    }
+}
+
 // ************start hover movie item****************
 
 .movie_hover {

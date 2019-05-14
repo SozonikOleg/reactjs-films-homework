@@ -81,4 +81,14 @@ input::-webkit-input-placeholder {
 	color: white;
 }
 
+@media (min-width: 960px){
+	input[type=search]:focus {
+		width: 300px;
+	}
+
+	input[type=search] {
+		width: 250px;
+	}
+}
+
 
