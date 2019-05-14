@@ -47,16 +47,22 @@ module.exports =  merge(common, {
       {
         test: /\.jsx?$/,
         include: /node_modules/,
-        use: ['react-hot-loader/webpack']
+        use: ['react-hot-loader/webpack'],
       },
       {
         test: /\.scss$/,
         use: [
-          'style-loader', // creates style nodes from JS strings
-          'css-loader?modules', // translates CSS into CommonJS
-          'sass-loader' // compiles Sass to CSS, using Node Sass by default
-        ]
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]_[local]_[hash:base64]',
+            },
+          },
+          'sass-loader',
+        ],
       },
-    ]
+    ],
   },
 });
