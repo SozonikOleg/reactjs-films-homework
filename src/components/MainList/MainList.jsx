@@ -20,9 +20,10 @@ class MainList extends React.Component {
   }
 
   render() {
+    const newDataSearch = this.props.dataSearch.slice(4);
     return (
       <div className={styles.movie_list}>
-        {this.props.dataSearch.map(item => (// eslint-disable-line
+        {newDataSearch.map(item => (// eslint-disable-line
           <MovieItem
             key={item.id}
             dataItem={item}

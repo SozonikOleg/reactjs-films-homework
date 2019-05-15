@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { hot } from 'react-hot-loader/root';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styles from './App.module.scss';
 import Header from '../Header';
 import Main from '../Main';
@@ -13,11 +13,11 @@ function App() {
   return (
     <Router>
       <div className={styles.three}>
-        <Header />
-        <Main />
-        <Link to="/link">
+        <Link to="/SearchResultsPage">
           <h2>Link</h2>
         </Link>
+        <Route exact path="/SearchResultsPage" component={Header} />
+        <Main />
       </div>
     </Router>
   );
