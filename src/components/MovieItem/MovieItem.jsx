@@ -4,6 +4,7 @@ import styles from './MovieItem.module.scss';
 import Modal from '../Modal/Modal'
 import { connect } from 'react-redux';
 import { getDataTrailer } from '../../action/getDataTrailer';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class MovieItem extends Component {
   constructor(props) {
@@ -95,7 +96,9 @@ class MovieItem extends Component {
             <section className={styles.main}>
               <p className={styles.discription_overview}>{dataItem.overview}</p>
             </section>
-            <button  onClick={this.toggleModal} className={styles.button_watch} >Watch Now</button>
+            <Link  to={{ pathname: "/SearchResultsPage", search: `?search=name${location.pathname}`,}}>
+              <button  onClick={this.toggleModal} className={styles.button_watch} >Watch Now</button>
+            </Link>
           </div>
         </div>
 
@@ -103,14 +106,16 @@ class MovieItem extends Component {
     }
 
     return (
-      <div className={styles.movie_wrapper}>
-        {itemState}
-        {discriptionState}
-          {this.state.isModalOpen &&
-              <Modal id={this.props.id} onClose={this.toggleModal}>
-              </Modal> 
-          }
-      </div>
+      <Router>
+        <div className={styles.movie_wrapper}>
+          {itemState}
+            {discriptionState}
+            {this.state.isModalOpen &&
+                <Modal id={this.props.id} onClose={this.toggleModal}>
+                </Modal> 
+            }
+        </div>
+      </Router>
     );
   }
 }

@@ -13,10 +13,7 @@ function App() {
   return (
     <Router>
       <div className={styles.three}>
-        <Link to="/SearchResultsPage">
-          <h2>Link</h2>
-        </Link>
-        <Route exact path="/SearchResultsPage" component={Header} />
+        <Header />
         <Main />
       </div>
     </Router>
