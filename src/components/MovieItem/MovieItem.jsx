@@ -96,8 +96,8 @@ class MovieItem extends Component {
             <section className={styles.main}>
               <p className={styles.discription_overview}>{dataItem.overview}</p>
             </section>
-            <Link  to={{ pathname: "/SearchResultsPage", search: `?search=name${location.pathname}`,}}>
-              <button  onClick={this.toggleModal} className={styles.button_watch} >Watch Now</button>
+            <Link  to={{ pathname: "/SearchResultsPage", search: `?search=name:${this.props.id}`,}}>
+              <button onClick={this.toggleModal} className={styles.button_watch} >Watch Now</button>
             </Link>
           </div>
         </div>
