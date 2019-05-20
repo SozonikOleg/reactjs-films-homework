@@ -1,17 +1,21 @@
 .movie_item {
-    height: 550px;
+    height: 480px;
     color: #09ade3;
     position: relative;
+    overflow: hidden;
+    border-radius: 5px;
     .movie_hover {
         z-index: 2;
     }
     .movie_img {
-        height: 550px;
+        height: 480px;
+        border-radius: 5px;
         width: 100%;
         position: relative;
         text-align: center;
     }
     .background_img {
+        border-radius: 5px;
         background: black;
         text-align: -webkit-center;
     }
@@ -21,6 +25,7 @@
     width: 22.9%;
     margin: 1%;
     background-color: white;
+    border-radius: 5px;
 }
 
 // ************start hover movie item****************
@@ -35,6 +40,7 @@
     position: absolute;
     top: 115px;
     color: white;
+    border-radius: 5px;
 }
 
 .movie_item:hover {
@@ -85,9 +91,10 @@
     justify-content: space-between;
     background-color: white;
     position: absolute;
-    top: 455px;
-    height: 100px;
+    top: 355px;
+    height: 125px;
     width: 100%;
+    border-radius: 0px 0px 5px 5px;
 }
 
 .title {
@@ -124,7 +131,7 @@
     background-color: rgba(0,0,0,0.5);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 550px;
+    height: 480px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -180,7 +187,7 @@
 }
 
 .description_img {
-    height: 550px;
+    height: 480px;
     width: 100%;
     position: relative;
     text-align: center;
@@ -191,7 +198,8 @@
     z-index: 1;
     position: relative;
     background: black;
-    height: 550px;
+    height: 480px;
+    border-radius: 5px;
 }
 .description_button {
     background:url('../../image/iconclose.png') no-repeat center;
