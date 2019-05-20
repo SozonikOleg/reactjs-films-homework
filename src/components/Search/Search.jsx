@@ -39,7 +39,7 @@ class Search extends Component {
       <Router>
         <div className={styles.three1}>
           <section className={styles.logo}>
-            <h2> Film</h2>
+            <h2> Films</h2>
           </section>
           <section className={styles.form_search}>
             <form id="myForm">

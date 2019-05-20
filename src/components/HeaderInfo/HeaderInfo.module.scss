@@ -1,18 +1,18 @@
 .headerInfo {
     display: flex;
     justify-content: space-between;
-    margin-top: 590px;
+    margin-top: 402px;
     color:white;
 }
 
 .left_item {
-    margin: 200px 30px 0px 175px;
+    margin: 200px 30px 0px 107px;
     color: white;
 }
 
 .title {
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .list {
@@ -21,7 +21,7 @@
     font-size: 20px;
     list-style-type: none;
     li {
-        margin-right: 10px;
+        margin-right: 31px;
         a {
             color: white;
             text-decoration: none;
@@ -29,14 +29,18 @@
     }
 }
 
+.nav_list {
+    margin-top: 5px;
+}
+
 .list_star {    
     display: flex;
-    padding-top: 50px;
+    padding-top: 40px;
     list-style-type: none;
 }
 
 .star {
-    font-size: 30px;
+    font-size: 26px;
     color:#09ade3;
     margin-right: 10px;
     text-decoration: none;
@@ -47,53 +51,67 @@
 }
 
 .counter {
-    width: 7%;
+    margin-top: -5px;
+    width: 8%;
     padding: 3px;
     background: #0a0e0f;
     border-radius: 5px;
     color: white;
     border: 1px solid #09ade3;;
     font-size: 20px;
+    text-align: center;
 }
 
 //start right item//
 
 .right_item {
-    margin-right: 20px;
-    width: 30%;
+    margin-top: 73px;
+    margin-right: 12px;
+    width: 23%;
     color: white;
 }
 
-.span {
-    margin-left: 50px;
-    padding: 5px;
+.discription_block {
+    margin-left: 65px;
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
     font-size: 20px;
 }
 
+.discription_text {
+    height: 167px;
+    overflow: hidden;
+    display: block;
+    line-height: 1.5;
+    font-size: 23px;
+}
+
+.discription_wrapper {
+    padding: 18px;
+}
+
 .bottons {
-    margin-top: 20px;
+    margin-top: 39px;
 }
 
 .bottons_left {
-    width: 35%;
-    padding: 10px;
-    margin-right: 75px;
+    width: 36%;
+    padding: 9px;
+    margin-right: 30px;
     background: #09ade3;
     border-radius: 5px;
     color: white;
-    border: none;
-    font-size: 20px;
+    border: 1px solid #09ade3;
+    font-size: 24px;
 }
 
 .bottons_right {
-    width: 35%;
-    padding: 10px;
+    width: 36%;
+    padding: 9px;
     background: #0a0e0f;
     border-radius: 5px;
     color: white;
     border: 1px solid white;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 @media (max-width: 1200px){

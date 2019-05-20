@@ -22,7 +22,7 @@ class MainList extends React.Component {
     if (foo) {
       this.props.changeStore(foo);
     } else {
-        this.props.changeStore('love');// eslint-disable-line
+      this.props.changeStore('love');// eslint-disable-line
     }
   }
 

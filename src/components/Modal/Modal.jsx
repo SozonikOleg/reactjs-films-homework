@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
+import { BrowserRouter as Link } from 'react-router-dom';
 import styles from './Modal.scss';
 
 class Modal extends Component {

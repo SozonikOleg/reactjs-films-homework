@@ -22,7 +22,7 @@ class HeaderInfo extends Component {
       <div className={styles.headerInfo}>
         <section className={styles.left_item}>
           <h2 className={styles.title}>The jungle book</h2>
-          <div className={styles.nav}>
+          <div className={styles.nav_list}>
             <ul className={styles.list}>
               {links.map((link, index) => (
                 // eslint-disable-next-line
@@ -44,13 +44,15 @@ class HeaderInfo extends Component {
           </div>
         </section>
         <section className={styles.right_item}>
-          <div className={styles.span}>
-            <span>
-              {mock.description}
-            </span>
+          <div className={styles.discription_block}>
+            <div className={styles.discription_wrapper}>
+              <span className={styles.discription_text}>
+                {mock.description}
+              </span>
+            </div>
           </div>
           <div className={styles.bottons}>
-            <button className={styles.bottons_left} type="button">Watch now</button>
+            <button className={styles.bottons_left} type="button">Watch Now</button>
             <button className={styles.bottons_right} type="button">View info</button>
           </div>
         </section>

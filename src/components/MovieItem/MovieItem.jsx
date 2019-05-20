@@ -39,6 +39,7 @@ class MovieItem extends Component {
   };
 
   render() {
+    console.log(location)
     const url = `https://image.tmdb.org/t/p/w400${this.props.background}`;
     const dataItem = this.props.dataItem;
     
@@ -95,9 +96,7 @@ class MovieItem extends Component {
             <section className={styles.main}>
               <p className={styles.discription_overview}>{dataItem.overview}</p>
             </section>
-            <Link  to={{ pathname: location.search, search: `+nameId:${this.props.id}`,}}>
               <button onClick={this.toggleModal} className={styles.button_watch} >Watch Now</button>
-            </Link>
           </div>
         </div>
 
