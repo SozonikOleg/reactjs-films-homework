@@ -11,7 +11,6 @@ class MovieItem extends Component {
     super(props);
     this.state = {
       itemState: true,
-      // hoverState: false,
       discriptionState: false,
       isModalOpen: false
     };
@@ -96,7 +95,7 @@ class MovieItem extends Component {
             <section className={styles.main}>
               <p className={styles.discription_overview}>{dataItem.overview}</p>
             </section>
-            <Link  to={{ pathname: "/SearchResultsPage", search: `?search=name:${this.props.id}`,}}>
+            <Link  to={{ pathname: location.search, search: `+nameId:${this.props.id}`,}}>
               <button onClick={this.toggleModal} className={styles.button_watch} >Watch Now</button>
             </Link>
           </div>
@@ -128,5 +127,3 @@ export default connect(
     },
   }),
 )(MovieItem);
-
-// export default MovieItem;

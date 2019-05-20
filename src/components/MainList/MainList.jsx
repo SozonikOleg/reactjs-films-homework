@@ -16,7 +16,14 @@ class MainList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.changeStore('happy');// eslint-disable-line
+    const { search } = location;
+    const params = new URLSearchParams(search);
+    const foo = params.get('search');
+    if (foo) {
+      this.props.changeStore(foo);
+    } else {
+        this.props.changeStore('love');// eslint-disable-line
+    }
   }
 
   render() {

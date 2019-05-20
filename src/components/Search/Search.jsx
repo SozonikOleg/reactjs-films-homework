@@ -35,9 +35,6 @@ class Search extends Component {
   }
 
   render() {
-    const valueSearchRouting = this.state.searchValue;
-    console.log('wdwdwdwdwd',this.state.searchValue);
-    console.log('_______',this.props);
     return (
       <Router>
         <div className={styles.three1}>
@@ -53,7 +50,7 @@ class Search extends Component {
                   value={this.state.searchValue}
                   onChange={this.hadleChangeInput}
                 />
-                <Link to={{ pathname: "/SearchResultsPage", search: `?search=${this.state.searchValue}`,}}>
+                <Link to={{ pathname: "/", search: `?search=${this.state.searchValue}`,}}>
                   <button className={styles.search_submit} type="submit" onClick={this.searchMovies.bind(this)} />
                 </Link>
               </div>
