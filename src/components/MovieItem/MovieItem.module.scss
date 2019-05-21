@@ -8,9 +8,7 @@
         z-index: 2;
     }
     .movie_img {
-        height: 480px;
         border-radius: 5px 5px 15px 15px;
-        width: 100%;
         position: relative;
         text-align: center;
     }
@@ -26,6 +24,7 @@
     margin: 1%;
     background-color: white;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 // ************start hover movie item****************
@@ -119,7 +118,7 @@
 .movie_rating {
     width: 10%;
     height: 16%;
-    padding: 3px 0px 5px 0px;
+    padding: 1px 0px 7px 0px;
     margin: 34px 34px 0px 0px;
     border: 2px solid #09ade3;
     border-radius: 5px;
@@ -188,7 +187,7 @@
     border: 2px solid white;
     height: 15px;
     width: 35px;
-    margin: 2px 33px;
+    margin: 2px 18px;
     padding: 1px 4px 10px 4px;
     text-align: center;
     color: #09ade3;
@@ -198,8 +197,6 @@
 }
 
 .description_img {
-    height: 480px;
-    width: 100%;
     position: relative;
     text-align: center;
     opacity: 0.3;
@@ -233,7 +230,7 @@
 
 .description_header {
     display: flex;
-    padding: 20px;
+    padding: 0px 0px 20px 20px;
 }
 
 .description_list {
@@ -253,6 +250,7 @@
     line-height: 1.5;
     margin-top: 2px;
     max-height: 228px;
+    max-width: 360px;
     overflow: hidden;
     font-size: 22px;
 }
@@ -260,7 +258,7 @@
 .description_nav {
     h2{
         text-transform: uppercase;
-        max-height: 22px;
+        max-height: 28px;
         overflow: hidden;
     }
 }
