@@ -3,6 +3,18 @@ import { connect } from 'react-redux';
 import styles from './Header.module.scss';
 import Search from '../Search/Search';// eslint-disable-line
 import HeaderInfo from '../HeaderInfo';
+import mock from '../mock';
+
+const three = {
+  color: 'green',
+  backgroundRepeat: 'no-repeat',
+  height: '872px',
+  backgroundColor: 'green',
+  webkitBackgroundSize: 'cover',
+  mozBackgroundSize: 'cover',
+  oBackgroundSize: 'cover',
+  backgroundSize: 'cover',
+};
 
 class Header extends React.Component {
   constructor(props) {
@@ -11,12 +23,12 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log('props.getState',this.props.getState.search[Math.floor(Math.random() * 3)]);// eslint-disable-line
-    const randomItem = this.props.getState.search[Math.floor(Math.random() * 3)];// eslint-disable-line
+    const movieData = this.props.getState.search[1] ? this.props.getState.search[1] : mock;
+    console.log('movieData', movieData);
     return (
-      <div className={styles.three}>
+      <div className={three}>
         <Search />
-        <HeaderInfo randomItem={randomItem} />
+        <HeaderInfo movieData={movieData} />
       </div>
     );
   }

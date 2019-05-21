@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -17,11 +18,12 @@ class HeaderInfo extends Component {
   }
 
   render() {
-    console.log('HeaderInfo', this.props.randomItem)//eslint-disable-line
+    const getMovieData = this.props.movieData;
+    console.log('this.props.movieData', this.props.movieData);
     return (
       <div className={styles.headerInfo}>
         <section className={styles.left_item}>
-          <h2 className={styles.title}>The jungle book</h2>
+          <h2 className={styles.title}>{getMovieData.title}</h2>
           <div className={styles.nav_list}>
             <ul className={styles.list}>
               {links.map((link, index) => (
@@ -47,7 +49,7 @@ class HeaderInfo extends Component {
           <div className={styles.discription_block}>
             <div className={styles.discription_wrapper}>
               <span className={styles.discription_text}>
-                {mock.description}
+                {getMovieData.overview}
               </span>
             </div>
           </div>
@@ -61,4 +63,8 @@ class HeaderInfo extends Component {
   }
 }
 
-export default HeaderInfo;
+export default connect(
+  state => ({
+    getState: state,
+  }),
+)(HeaderInfo);
