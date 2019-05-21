@@ -8,6 +8,7 @@ import styles from './App.module.scss';
 import Header from '../Header';
 import Main from '../Main';
 import store from '../../modules/store';
+import Footer from '../Footer'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div className={styles.three}>
         <Header />
         <Main />
+        <Footer />
       </div>
     </Router>
   );

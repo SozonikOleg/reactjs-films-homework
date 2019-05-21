@@ -40,6 +40,10 @@ class MainList extends React.Component {
             id={item.id}
           />
         ))}
+        <div className={styles.movie_loading}>
+          <button type="button" className={styles.button_loading} />
+          <p>Loading</p>
+        </div>
       </div>
     );
   }

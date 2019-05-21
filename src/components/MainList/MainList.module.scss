@@ -8,6 +8,27 @@
     background-color: #f2f2f2;
 }
 
+.button_loading {
+    margin-top: 70px;
+    width: 115px;
+	height: 30px;
+	background:url('../../image/icons-loading.png') no-repeat center;
+	border: 0px;
+}
+
+.movie_loading {
+    margin: 0px auto;
+    color: #c5c5c5;
+    text-transform: uppercase;
+    font-size: 12px;
+    p {
+        text-align: center;
+        margin: 5px;
+        font-size: 15px;
+        margin: 3px 0px 63px 0px;
+    }
+}
+
 @media (max-width: 960px){
     .movie_list {
         padding: 1px;
