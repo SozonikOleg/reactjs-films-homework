@@ -145,6 +145,8 @@
     }
 
     .title {
+        max-height: 28%;
+        overflow: hidden;
         text-transform: uppercase;
         font-size: 33px;
     }
