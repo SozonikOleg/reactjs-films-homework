@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { getDataTrailer } from '../../action/getDataTrailer';
 import { getHeaderDataItem } from '../../action/getHeaderDataItem';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import  imageError  from '../../image/errorImage.jpg';
 
 class MovieItem extends Component {
   constructor(props) {
@@ -42,7 +43,8 @@ class MovieItem extends Component {
 
   render() {
     console.log(location)
-    const url = `https://image.tmdb.org/t/p/w400${this.props.background}`;
+    const url = this.props.background ? `https://image.tmdb.org/t/p/w400${this.props.background}`: imageError;
+    
     const dataItem = this.props.dataItem;
     
     let itemState;
@@ -81,7 +83,7 @@ class MovieItem extends Component {
     if (this.state.discriptionState) {
       discriptionState = (
         <div className={styles.discription_item}>
-          <img src={url} alt="" className={styles.description_img} />
+          <img src={url} alt="image" className={styles.description_img} />
           <button className={styles.description_button} onClick={this.closeDiscription.bind(this)}></button>
           <div  className={styles.description_info} >
             <section className={styles.description_header}>
