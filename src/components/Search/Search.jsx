@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './Search.module.scss';
 import { getSearchData } from '../../action/search';
+import { getHeaderData } from '../../action/getHeaderData';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class Search extends Component {
@@ -24,6 +25,7 @@ class Search extends Component {
 
   searchMovies = (e) => {
     this.props.postSearch(this.state.searchValue);
+    this.props.postHeaderData(this.state.searchValue);
     this.clearForm();
   }
 
@@ -67,6 +69,9 @@ export default connect(
   dispatch => ({
     postSearch: SearchValue => {
       dispatch(getSearchData(SearchValue));
+    },
+    postHeaderData: SearchValue => {
+      dispatch(getHeaderData(SearchValue));
     },
   }),
 )(Search);

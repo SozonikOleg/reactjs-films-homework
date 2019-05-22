@@ -13,7 +13,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const movieData = this.props.getState.search[1] ? this.props.getState.search[1] : mock;
+    const movieData = this.props.getState.headerData;
     const url = `https://image.tmdb.org/t/p/original/${movieData.backdrop_path}`;
     return (
       <div style={{

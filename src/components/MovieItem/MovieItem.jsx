@@ -4,6 +4,7 @@ import styles from './MovieItem.module.scss';
 import Modal from '../Modal/Modal'
 import { connect } from 'react-redux';
 import { getDataTrailer } from '../../action/getDataTrailer';
+import { getHeaderDataItem } from '../../action/getHeaderDataItem';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class MovieItem extends Component {
@@ -24,6 +25,7 @@ class MovieItem extends Component {
     this.setState({ isOpepned: !this.state.isOpepned });
     this.setState({ discriptionState: true });
     this.setState({ itemState: false });
+    this.props.postDataItemMovie(this.props.dataItem);
   }
 
   closeDiscription() {
@@ -123,6 +125,9 @@ export default connect(
   dispatch => ({
     returnId: id => {
       dispatch(getDataTrailer(id));
+    },
+    postDataItemMovie: dataItem => {
+      dispatch(getHeaderDataItem(dataItem));
     },
   }),
 )(MovieItem);

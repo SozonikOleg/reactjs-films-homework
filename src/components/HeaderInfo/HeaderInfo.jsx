@@ -4,7 +4,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import styles from './HeaderInfo.module.scss';
-import mock from '../mock';
 
 library.add(faStar);
 
@@ -23,7 +22,7 @@ class HeaderInfo extends Component {
     return (
       <div className={styles.headerInfo}>
         <section className={styles.left_item}>
-          <h2 className={styles.title}>{getMovieData.title}</h2>
+          <h2 className={styles.title}>{getMovieData.original_title}</h2>
           <div className={styles.nav_list}>
             <ul className={styles.list}>
               {links.map((link, index) => (
