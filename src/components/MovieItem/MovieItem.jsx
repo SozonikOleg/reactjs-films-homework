@@ -114,7 +114,7 @@ class MovieItem extends Component {
             {discriptionState}
             {this.state.isModalOpen &&
                 <Modal id={this.props.id} onClose={this.toggleModal}>
-                </Modal> 
+                </Modal>
             }
         </div>
       </Router>

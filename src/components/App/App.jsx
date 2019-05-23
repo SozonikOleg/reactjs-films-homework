@@ -8,17 +8,20 @@ import styles from './App.module.scss';
 import Header from '../Header';
 import Main from '../Main';
 import store from '../../modules/store';
-import Footer from '../Footer'
+import Footer from '../Footer';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 function App() {
   return (
-    <Router>
-      <div className={styles.three}>
-        <Header />
-        <Main />
-        <Footer />
-      </div>
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <div className={styles.three}>
+          <Header />
+          <Main />
+          <Footer />
+        </div>
+      </Router>
+    </ErrorBoundary>
   );
 }
 

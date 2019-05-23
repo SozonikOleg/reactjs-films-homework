@@ -7,6 +7,6 @@ export const ComingSoon = () => (dispatch) => {
   )
     .then(res => res.json())
     .then((response) => {
-      dispatch({ type: 'GET_DATA_COMING_SOON', payload: response.results });
+      dispatch({ type: 'GET_FILM_ITEMS', payload: response.results });
     });
 };

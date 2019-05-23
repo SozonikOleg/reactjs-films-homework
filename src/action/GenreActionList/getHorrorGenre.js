@@ -6,6 +6,6 @@ export const getHorrorGenre = () => (dispatch) => {
   )
     .then(res => res.json())
     .then((response) => {
-      dispatch({ type: 'GET_GENRE_HORROR', payload: response.results });
+      dispatch({ type: 'GET_FILM_ITEMS', payload: response.results });
     });
 };

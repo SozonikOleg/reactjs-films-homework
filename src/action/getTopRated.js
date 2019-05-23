@@ -6,6 +6,6 @@ export const getTopRated = () => (dispatch) => {
   )
     .then(res => res.json())
     .then((response) => {
-      dispatch({ type: 'GET_TOP_RAITED', payload: response.results });
+      dispatch({ type: 'GET_FILM_ITEMS', payload: response.results });
     });
 };

@@ -6,6 +6,6 @@ export const getSearchData = data => (dispatch) => {
   )
     .then(res => res.json())
     .then((response) => {
-      dispatch({ type: 'POST_SEARCH_VALUE', payload: response.results });
+      dispatch({ type: 'GET_FILM_ITEMS', payload: response.results });
     });
 };
