@@ -41,7 +41,19 @@ class TitleMain extends Component {
             <a href="./" onClick={this.clickComingSoonButton.bind(this)}>Coming Soon</a>
           </li>
           <li>
-            <a href="./">Genre</a>
+            <a href="/">
+              Genre
+            </a>
+            <ul className={styles.submenu}>
+              <li><a href="/">Item 1</a></li>
+              <li><a href="/">Item 2</a></li>
+              <li><a href="/">Item 1</a></li>
+              <li><a href="/">Item 2</a></li>
+              <li><a href="/">Item 1</a></li>
+              <li><a href="/">Item 2</a></li>
+              <li><a href="/">Item 1</a></li>
+              <li><a href="/">Item 2</a></li>
+            </ul>
           </li>
         </ul>
         <div className={styles.title_main_buttons}>
