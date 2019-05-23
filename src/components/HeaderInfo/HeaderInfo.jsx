@@ -41,7 +41,7 @@ class HeaderInfo extends Component {
                 <FontAwesomeIcon icon={star} className={styles.star} />
               </li>
             ))}
-            <div className={styles.counter}>4.8</div>
+            <div className={styles.counter}>{getMovieData.vote_average}</div>
           </div>
         </section>
         <section className={styles.right_item}>

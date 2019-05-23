@@ -14,7 +14,8 @@ class Header extends React.Component {
 
   render() {
     const movieData = this.props.getState.headerData;
-    const url = `https://image.tmdb.org/t/p/original/${movieData.backdrop_path}`;
+    const backdrop = movieData.backdrop_path ? movieData.backdrop_path : '/jHvUu1G1C176OfIBnVwwVhRC6nU.jpg';
+    const url = `https://image.tmdb.org/t/p/original/${backdrop}`;
     return (
       <div style={{
         backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url(${url})`,

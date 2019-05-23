@@ -1,9 +1,18 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import ErrorModal from '../ErrorModal';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false };
+    this.state = {
+      hasError: false,
+      stateErrorModal: true,
+    };
+  }
+
+  toggleModal = () => {
+    this.setState(state => ({hasError: !state.hasError}));
   }
 
   static getDerivedStateFromError(error) {
@@ -12,12 +21,15 @@ class ErrorBoundary extends React.Component {
   }
 
   render() {
-    console.log(this.state.hasError);
+    console.log('stateErrorModal', this.state.stateErrorModal);
+    console.log('hasError', this.state.hasError);
     if (this.state.hasError) {
       // Здесь можно рендерить запасной интерфейс
       return (
         <div>
-          <h1>This is error!</h1>
+          {this.state.stateErrorModal &&
+            <ErrorModal onClose={this.toggleModal} />
+          }
         </div>
       );
     }

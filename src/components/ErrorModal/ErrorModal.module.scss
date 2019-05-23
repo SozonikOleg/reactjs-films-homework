@@ -1,0 +1,39 @@
+.three {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgba(0,0,0, .9);
+    z-index: 1;
+}
+
+.button_close {
+    background:url('../../image/iconclose.png') no-repeat center;
+    border: none;
+    padding: 12px 12px;
+    position: absolute;
+    top: 3px;
+    right: -25px;
+}
+
+.wrapper_modal{
+    position: relative;
+}
+
+.iframe_modal {
+    width: 759px;
+    height: 700px;;
+    font-size: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid white;
+    background: #09ade3;
+    background:url('../../image/ErrorTrailer.jpg') no-repeat center;
+    h1 {
+        margin-top: 620px;
+    }
+}

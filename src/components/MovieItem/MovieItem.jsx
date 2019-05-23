@@ -103,7 +103,6 @@ class MovieItem extends Component {
               <button onClick={this.toggleModal} className={styles.button_watch} >Watch Now</button>
           </div>
         </div>
-
       );
     }
 
