@@ -6,6 +6,11 @@ export const getDataTrailer = id => (dispatch) => {
   )
     .then(res => res.json())
     .then((response) => {
-      dispatch({ type: 'POST_DATA_TRAILER', payload: response.results });
+      console.log('response', response);
+      if (!response.results[0]) {
+        console.log('response', 'false');
+        return dispatch({ type: 'POST_DATA_BOOL', payload: false });
+      }
+      return dispatch({ type: 'POST_DATA_TRAILER', payload: response.results });
     });
 };

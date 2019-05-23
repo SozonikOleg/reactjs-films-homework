@@ -7,7 +7,11 @@ import styles from './Modal.scss';
 
 class Modal extends Component {
   render() {
-    const url = `https://www.youtube.com/embed/${this.props.data.TrailerId.map(item => item.key)}`;// eslint-disable-line
+    console.log('________________',this.props.data)
+    if (!this.props.data.TrailerId) {
+      throw new Error();
+    }
+    const url = `https://www.youtube.com/embed/${this.props.data.TrailerId.key}`;// eslint-disable-line
     return ReactDOM.createPortal(
       <div className={styles.three}>
         <div className={styles.wrapper_modal}>

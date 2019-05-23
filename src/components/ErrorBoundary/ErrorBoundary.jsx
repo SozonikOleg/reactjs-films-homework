@@ -1,5 +1,4 @@
 import React from 'react';
-import Modal from '../Modal/Modal';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
