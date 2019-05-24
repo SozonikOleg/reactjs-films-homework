@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders well without props 1`] = `
+<div
+  className="footer_list"
+>
+  <p
+    className="footer_header"
+  >
+    Films
+  </p>
+  <span
+    className="footer_description"
+  >
+    Copyright © 2018 FILMS YOUR NAME
+  </span>
+</div>
+`;

@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { hot } from 'react-hot-loader/root';
 import { BrowserRouter as Router } from 'react-router-dom';
-import styles from './App.module.scss';
+import styles from './App.scss';
 import Header from '../Header';
 import Main from '../Main';
 import store from '../../modules/store';
