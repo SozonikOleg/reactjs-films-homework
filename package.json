@@ -26,7 +26,7 @@
     ],
     "moduleNameMapper": {
       "\\.(css|less|scss)$": "identity-obj-proxy",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/config/jest/fileMock.js"
+      "\\.(gif|ttf|eot|jpg|svg)$": "<rootDir>/config/__mock__/fileMock.js"
     }
   },
   "dependencies": {

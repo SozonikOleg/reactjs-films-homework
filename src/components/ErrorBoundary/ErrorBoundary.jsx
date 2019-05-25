@@ -11,8 +11,8 @@ class ErrorBoundary extends React.Component {
     };
   }
 
-  toggleModal = () => {
-    this.setState(state => ({hasError: !state.hasError}));
+  toggleModal() {
+    this.setState(state => ({ hasError: !state.hasError }));
   }
 
   static getDerivedStateFromError(error) {
@@ -21,20 +21,20 @@ class ErrorBoundary extends React.Component {
   }
 
   render() {
-    console.log('stateErrorModal', this.state.stateErrorModal);
-    console.log('hasError', this.state.hasError);
-    if (this.state.hasError) {
-      // Здесь можно рендерить запасной интерфейс
-      return (
-        <div>
-          {this.state.stateErrorModal &&
-            <ErrorModal onClose={this.toggleModal} />
-          }
-        </div>
-      );
-    }
-
-    return this.props.children;
+    const modal = (
+<div>
+      {this.state.stateErrorModal &&
+        <ErrorModal onClose={this.toggleModal} />
+      }
+    </div>
+);
+    const value = this.state.hasError ? modal : this.props.children;
+    return (
+      <div>
+        {value}
+;
+</div>
+    );
   }
 }
 
