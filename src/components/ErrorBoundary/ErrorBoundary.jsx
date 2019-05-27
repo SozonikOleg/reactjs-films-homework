@@ -11,7 +11,7 @@ class ErrorBoundary extends React.Component {
     };
   }
 
-  toggleModal() {
+  toggleModal = () => {
     this.setState(state => ({ hasError: !state.hasError }));
   }
 
@@ -22,18 +22,17 @@ class ErrorBoundary extends React.Component {
 
   render() {
     const modal = (
-<div>
-      {this.state.stateErrorModal &&
-        <ErrorModal onClose={this.toggleModal} />
-      }
-    </div>
-);
+      <div>
+        {this.state.stateErrorModal
+        && <ErrorModal onClose={this.toggleModal} />
+            }
+      </div>
+    );
     const value = this.state.hasError ? modal : this.props.children;
     return (
       <div>
         {value}
-;
-</div>
+      </div>
     );
   }
 }

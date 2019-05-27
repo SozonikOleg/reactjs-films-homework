@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import styles from './ErrorModal.module.scss';
 import ErrorTrailer from '../../image/ErrorTrailer.jpg';
 
-class Modal extends Component {
+class ErrorModal extends Component {
   render() {
     const url = ErrorTrailer;
     return ReactDOM.createPortal(
@@ -29,4 +29,4 @@ export default connect(
   state => ({
     data: state,
   }),
-)(Modal);
+)(ErrorModal);
