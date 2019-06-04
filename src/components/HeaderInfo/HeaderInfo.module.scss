@@ -13,6 +13,8 @@
 .title {
     text-transform: uppercase;
     font-size: 50px;
+    max-height: 70px;
+    overflow: hidden;
 }
 
 .list {
@@ -68,6 +70,7 @@
     margin-top: 73px;
     margin-right: 12px;
     width: 23%;
+    max-width: 23%;
     color: white;
 }
 

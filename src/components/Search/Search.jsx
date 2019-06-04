@@ -30,7 +30,7 @@ class Search extends Component {
   }
 
   clearForm = () => {
-    document.getElementById("myForm").reset(); 
+    document.getElementById("myForm"); 
     this.setState({
       searchValue: ''
     })

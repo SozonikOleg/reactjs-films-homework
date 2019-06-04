@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import styles from './MovieItem.module.scss';
 import Modal from '../Modal/Modal'
@@ -23,26 +22,31 @@ class MovieItem extends Component {
   }
 
   ClickViewButton() {
-    this.setState({ isOpepned: !this.state.isOpepned });
-    this.setState({ discriptionState: true });
-    this.setState({ itemState: false });
+    this.setState({
+      isOpepned: !this.state.isOpepned,
+      discriptionState: true,
+      itemState: false,
+    });
     this.props.postDataItemMovie(this.props.dataItem);
   }
 
   closeDiscription() {
-    this.setState({ discriptionState: false });
-    this.setState({ itemState: true });
+    this.setState({
+      discriptionState: false,
+      itemState: true,
+     });
   }
 
   toggleModal = () => {
     this.setState(state => ({isModalOpen: !state.isModalOpen}));
+    this.setState({
+      discriptionState: false,
+      itemState: true,
+     })
     this.props.returnId(this.props.id);
-    this.setState({ discriptionState: false })
-    this.setState({ itemState: true })
   };
 
   render() {
-    console.log(location)
     const url = this.props.background ? `https://image.tmdb.org/t/p/w400${this.props.background}`: imageError;
     
     const dataItem = this.props.dataItem;
