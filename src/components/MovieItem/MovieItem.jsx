@@ -13,7 +13,6 @@ class MovieItem extends Component {
     super(props);
     this.state = {
       itemState: true,
-      discriptionState: false,
       isModalOpen: false,
     };
   }
@@ -23,7 +22,6 @@ class MovieItem extends Component {
     const { id } = this.props;
     this.setState(state => ({ isModalOpen: !state.isModalOpen }));
     this.setState({
-      discriptionState: false,
       itemState: true,
     });
     returnId(id);
@@ -31,19 +29,18 @@ class MovieItem extends Component {
 
   closeDiscription() {
     this.setState({
-      discriptionState: false,
       itemState: true,
     });
   }
 
-  ClickViewButton() {
+  clickViewButton() {
     const { isOpepned } = this.state;
-    const { dataItem } = this.props;
-    const { postDataItemMovie } = this.props;
-
+    const {
+      dataItem,
+      postDataItemMovie,
+    } = this.props;
     this.setState({
       isOpepned: !isOpepned,
-      discriptionState: true,
       itemState: false,
     });
     postDataItemMovie(dataItem);
@@ -55,15 +52,17 @@ class MovieItem extends Component {
   }
 
   render() {
-    const { background } = this.props;
-    const { dataItem } = this.props;
-    let { itemState } = this.state;
-    const { itemData } = this.props;
-    const { vote_average } = this.props;
-    const { isModalOpen } = this.state;
-    const { id } = this.props;
-    let { discriptionState } = this.state;
+    const {
+      background,
+      dataItem,
+      itemData,
+      vote_average,
+      id,
+    } = this.props;
 
+    let discription;
+    let { itemState } = this.state;
+    const { isModalOpen } = this.state;
     const url = background ? `https://image.tmdb.org/t/p/w400${background}` : imageError;
 
     if (itemState) {
@@ -76,10 +75,9 @@ class MovieItem extends Component {
             <div className={styles.movie_hover}>
               <button type="button" onClick={this.toggleModal} className={styles.hover_button_play} />
               <span className={styles.hover_watch}>Watch Now</span>
-              <button type="button" onClick={this.ClickViewButton.bind(this)} className={styles.hover_button_view}>View Info</button>
+              <button type="button" onClick={this.clickViewButton.bind(this)} className={styles.hover_button_view}>View Info</button>
             </div>
           </div>
-
           <div className={styles.movie_description}>
             <div className="movie-info">
               <h2 className={styles.title}>{itemData}</h2>
@@ -95,8 +93,8 @@ class MovieItem extends Component {
       );
     }
 
-    if (discriptionState) {
-      discriptionState = (
+    if (!itemState) {
+      discription = (
         <div className={styles.discription_item}>
           <img src={url} alt="description_image" className={styles.description_img} />
           <button type="button" className={styles.description_button} onClick={this.closeDiscription.bind(this)} />
@@ -125,7 +123,7 @@ class MovieItem extends Component {
       <Router>
         <div className={styles.movie_wrapper}>
           {itemState}
-          {discriptionState}
+          {discription}
           {isModalOpen
             && <Modal id={id} onClose={this.toggleModal} />
             }
@@ -148,7 +146,7 @@ MovieItem.propTypes = {
   postDataItemMovie: PropTypes.func.isRequired,
   background: PropTypes.string.isRequired,
   itemData: PropTypes.string.isRequired,
-  vote_average: PropTypes.string.isRequired,
+  vote_average: PropTypes.number.isRequired,
 };
 
 export default connect(

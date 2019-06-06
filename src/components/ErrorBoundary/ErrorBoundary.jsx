@@ -20,7 +20,8 @@ class ErrorBoundary extends React.Component {
   }
 
   render() {
-    const { stateErrorModal } = this.state;
+    const { stateErrorModal, hasError } = this.state;
+    const { children } = this.props;
     const modal = (
       <div>
         {stateErrorModal
@@ -28,8 +29,7 @@ class ErrorBoundary extends React.Component {
             }
       </div>
     );
-    const { hasError } = this.state;
-    const { children } = this.props;
+
     const value = hasError ? modal : children;
     return (
       <div>

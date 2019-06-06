@@ -2,7 +2,7 @@ import urls from '../data/constants';
 
 // eslint-disable-next-line import/prefer-default-export
 export const getDataTrailer = id => (dispatch) => {
-  const url = `${urls.themoviedb}/movie/${id}/videos?${urls.key}&language=en-US`
+  const url = `${urls.themoviedb}/movie/${id}/videos?${urls.key}&language=en-US`;
   // eslint-disable-next-line no-undef
   fetch(
     url,

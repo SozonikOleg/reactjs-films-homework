@@ -12,7 +12,7 @@ module.exports = {
     },
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": rue
+            "jsx": true
         },
         "ecmaVersion": 2018,
         "sourceType": "module"

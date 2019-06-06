@@ -6,8 +6,7 @@ import styles from './Modal.scss';
 
 class Modal extends Component {
   render() {
-    const { data } = this.props;
-    const { onClose } = this.props;
+    const { data, onClose } = this.props;
     if (!data.TrailerId) {
       throw new Error();
     }

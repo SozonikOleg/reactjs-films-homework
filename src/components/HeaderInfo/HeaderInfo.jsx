@@ -30,18 +30,18 @@ class HeaderInfo extends Component {
           <h2 className={styles.title}>{getMovieData.original_title}</h2>
           <div className={styles.nav_list}>
             <ul className={styles.list}>
-              {links.map(link => (
-                <li key={link}>
-                  <a href="./">{link}</a>
+              {links.map((item, i) => (
+                <li key={`${item + i}`}>
+                  <a href="./">{item}</a>
                 </li>
               ))}
             </ul>
             <span className={styles.time}>1h 46 min</span>
           </div>
           <div className={styles.list_star}>
-            {icons.map(star => (
-              <li key={star}>
-                <FontAwesomeIcon icon={star} className={styles.star} />
+            {icons.map((item, i) => (
+              <li key={`${item + i}`}>
+                <FontAwesomeIcon icon={item} className={styles.star} />
               </li>
             ))}
             <div className={styles.counter}>{getMovieData.vote_average}</div>
