@@ -1,5 +1,6 @@
 module.exports = {
     "env": {
+        "browser": true,
         "es6": true,
         "node": true,
         "jest": true
@@ -11,7 +12,7 @@ module.exports = {
     },
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": rue
         },
         "ecmaVersion": 2018,
         "sourceType": "module"
@@ -20,5 +21,8 @@ module.exports = {
         "react"
     ],
     "rules": {
-    }
+        "no-restricted-globals": ["error", "event", "fdescribe"],
+        "camelcase": ["error", {"properties": "never"}],
+    },
+    "parser": "babel-eslint"
 };

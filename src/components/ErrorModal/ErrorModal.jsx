@@ -2,12 +2,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import styles from './ErrorModal.module.scss';
-import ErrorTrailer from '../../image/ErrorTrailer.jpg';
 
 class ErrorModal extends Component {
   render() {
-    const url = ErrorTrailer;
+    const { onClose } = this.props;
     return ReactDOM.createPortal(
       <div className={styles.three}>
         <div className={styles.wrapper_modal}>
@@ -16,14 +16,19 @@ class ErrorModal extends Component {
           </div>
           <button
             className={styles.button_close}
-            onClick={this.props.onClose}// eslint-disable-line
+            onClick={onClose}
           />
         </div>
       </div>,
-      document.getElementById('modal-root'),// eslint-disable-line
+      document.getElementById('modal-root'),
     );
   }
 }
+
+ErrorModal.propTypes = {
+  onClose: PropTypes.func.isRequired,
+};
+
 
 export default connect(
   state => ({

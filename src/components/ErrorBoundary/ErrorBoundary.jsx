@@ -1,5 +1,5 @@
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import PropTypes from 'prop-types';
 import ErrorModal from '../ErrorModal';
 
 class ErrorBoundary extends React.Component {
@@ -11,24 +11,26 @@ class ErrorBoundary extends React.Component {
     };
   }
 
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
   toggleModal = () => {
     this.setState(state => ({ hasError: !state.hasError }));
   }
 
-  static getDerivedStateFromError(error) {
-    // Обновите состояние так, чтобы следующий рендер показал запасной интерфейс.
-    return { hasError: true };
-  }
-
   render() {
+    const { stateErrorModal } = this.state;
     const modal = (
       <div>
-        {this.state.stateErrorModal
+        {stateErrorModal
         && <ErrorModal onClose={this.toggleModal} />
             }
       </div>
     );
-    const value = this.state.hasError ? modal : this.props.children;
+    const { hasError } = this.state;
+    const { children } = this.props;
+    const value = hasError ? modal : children;
     return (
       <div>
         {value}
@@ -37,4 +39,7 @@ class ErrorBoundary extends React.Component {
   }
 }
 
+ErrorBoundary.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 export default ErrorBoundary;

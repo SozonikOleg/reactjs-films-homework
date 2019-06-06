@@ -1,8 +1,11 @@
-/* eslint-disable import/prefer-default-export */
+import urls from '../data/constants';
+
+// eslint-disable-next-line import/prefer-default-export
 export const getDataTrailer = id => (dispatch) => {
+  const url = `${urls.themoviedb}/movie/${id}/videos?${urls.key}&language=en-US`
   // eslint-disable-next-line no-undef
   fetch(
-    `https://api.themoviedb.org/3/movie/${id}/videos?api_key=d930c628f4aadc8b0b06359a9cf7230d&language=en-US`,
+    url,
   )
     .then(res => res.json())
     .then((response) => {

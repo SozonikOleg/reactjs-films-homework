@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import styles from './Search.module.scss';
 import { getSearchData } from '../../action/search';
 import { getHeaderData } from '../../action/getHeaderData';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class Search extends Component {
   constructor(prop) {
@@ -23,20 +24,24 @@ class Search extends Component {
     });
   };
 
-  searchMovies = (e) => {
-    this.props.postSearch(this.state.searchValue);
-    this.props.postHeaderData(this.state.searchValue);
+  searchMovies = () => {
+    const { searchValue } = this.state;
+    const { postSearch } = this.props;
+    const { postHeaderData } = this.props;
+    postSearch(searchValue);
+    postHeaderData(searchValue);
     this.clearForm();
   }
 
   clearForm = () => {
-    document.getElementById("myForm"); 
+    // document.getElementById("myForm"); ref
     this.setState({
-      searchValue: ''
-    })
+      searchValue: '',
+    });
   }
 
   render() {
+    const { searchValue } = this.state;
     return (
       <Router>
         <div className={styles.three1}>
@@ -49,11 +54,11 @@ class Search extends Component {
                 <input
                   type="search"
                   placeholder="the jungle book"
-                  value={this.state.searchValue}
+                  value={searchValue}
                   onChange={this.hadleChangeInput}
                 />
-                <Link to={{ pathname: "/", search: `?search=${this.state.searchValue}`,}}>
-                  <button className={styles.search_submit} type="submit" onClick={this.searchMovies.bind(this)} />
+                <Link to={{ pathname: '/', search: `?search=${searchValue}` }}>
+                  <button className={styles.search_submit} type="submit" onClick={this.searchMovies} />
                 </Link>
               </div>
             </form>
@@ -64,13 +69,18 @@ class Search extends Component {
   }
 }
 
+Search.propTypes = {
+  postSearch: PropTypes.func.isRequired,
+  postHeaderData: PropTypes.func.isRequired,
+};
+
 export default connect(
-  state => ({}),
+  () => ({}),
   dispatch => ({
-    postSearch: SearchValue => {
+    postSearch: (SearchValue) => {
       dispatch(getSearchData(SearchValue));
     },
-    postHeaderData: SearchValue => {
+    postHeaderData: (SearchValue) => {
       dispatch(getHeaderData(SearchValue));
     },
   }),

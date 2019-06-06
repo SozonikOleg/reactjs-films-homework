@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styles from './TitleMain.module.scss';
 import genres from '../../data/dataUrls';
 import { getTrending } from '../../action/getTrending';
@@ -9,35 +10,34 @@ import { ComingSoon } from '../../action/getComingSoon';
 import { getGenre } from '../../action/GenreActionList/getGenre';
 
 class TitleMain extends Component {
-  componentDidMount() {
-
-  }
-
-  clickTrendingButton(event) {
-    event.preventDefault();
-    this.props.getDataTrending();
-  }
-
-  clickTopRatedButton(event) {
-    event.preventDefault();
-    this.props.TopRated();
-  }
-
-  clickComingSoonButton(event) {
-    event.preventDefault();
-    this.props.getComingSoon();
-  }
-
   getActionData(event) {
+    const { getActionList } = this.props;
     event.preventDefault();
     const { search } = location;
     const params = new URLSearchParams(search);
     const foo = params.get('genre');
-    this.props.getActionList(foo);
+    getActionList(foo);
+  }
+
+  clickTrendingButton(event) {
+    const { getDataTrending } = this.props;
+    event.preventDefault();
+    getDataTrending();
+  }
+
+  clickComingSoonButton(event) {
+    const { getComingSoon } = this.props;
+    event.preventDefault();
+    getComingSoon();
+  }
+
+  clickTopRatedButton(event) {
+    const { topRated } = this.props;
+    event.preventDefault();
+    topRated();
   }
 
   render() {
-    console.log('genres.id', genres);
     return (
       <div className={styles.title_main}>
         <ul className={styles.title_main_list}>
@@ -74,13 +74,20 @@ class TitleMain extends Component {
   }
 }
 
+TitleMain.propTypes = {
+  topRated: PropTypes.func.isRequired,
+  getComingSoon: PropTypes.func.isRequired,
+  getDataTrending: PropTypes.func.isRequired,
+  getActionList: PropTypes.func.isRequired,
+};
+
 export default connect(
-  state => ({}),
+  () => ({}),
   dispatch => ({
     getDataTrending: (dataItem) => {
       dispatch(getTrending(dataItem));
     },
-    TopRated: (dataItem) => {
+    topRated: (dataItem) => {
       dispatch(getTopRated(dataItem));
     },
     getComingSoon: (dataItem) => {

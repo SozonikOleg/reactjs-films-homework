@@ -1,8 +1,11 @@
-/* eslint-disable no-undef */
-/* eslint-disable import/prefer-default-export */
-export const getGenre = () => (dispatch) => {
+import urls from '../../data/constants';
+
+// eslint-disable-next-line import/prefer-default-export
+export const getGenre = id => (dispatch) => {
+  const url = `${urls.themoviedb}/discover/movie?${urls.key}&with_genres=${id}`;
+  // eslint-disable-next-line no-undef
   fetch(
-    'https://api.themoviedb.org/3/discover/movie?api_key=d930c628f4aadc8b0b06359a9cf7230d&with_genres=28',
+    url,
   )
     .then(res => res.json())
     .then((response) => {

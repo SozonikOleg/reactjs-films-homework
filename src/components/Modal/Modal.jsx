@@ -1,17 +1,17 @@
-/* eslint-disable react/button-has-type */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { BrowserRouter as Link } from 'react-router-dom';
 import styles from './Modal.scss';
 
 class Modal extends Component {
   render() {
-    console.log('________________',this.props.data)
-    if (!this.props.data.TrailerId) {
+    const { data } = this.props;
+    const { onClose } = this.props;
+    if (!data.TrailerId) {
       throw new Error();
     }
-    const url = `https://www.youtube.com/embed/${this.props.data.TrailerId.key}`;// eslint-disable-line
+    const url = `https://www.youtube.com/embed/${data.TrailerId.key}`;
     return ReactDOM.createPortal(
       <div className={styles.three}>
         <div className={styles.wrapper_modal}>
@@ -25,15 +25,27 @@ class Modal extends Component {
             title="movie"
           />
           <button
+            type="button"
             className={styles.button_close}
-            onClick={this.props.onClose}// eslint-disable-line
+            onClick={onClose}
           />
         </div>
       </div>,
-      document.getElementById('modal-root'),// eslint-disable-line
+      document.getElementById('modal-root'),
     );
   }
 }
+
+Modal.defaultProps = {
+  onClose: [PropTypes.array],
+};
+
+Modal.propTypes = {
+  data: PropTypes.func.isRequired,
+  onClose: PropTypes.oneOfType([
+    PropTypes.array,
+  ]),
+};
 
 export default connect(
   state => ({
