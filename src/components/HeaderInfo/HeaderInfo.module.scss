@@ -29,16 +29,17 @@
     }
 }
 
-.list_star {
+.list_star {    
     display: flex;
-    
     padding-top: 50px;
+    list-style-type: none;
 }
 
 .star {
     font-size: 30px;
     color:#09ade3;
     margin-right: 10px;
+    text-decoration: none;
 }
 
 .time {

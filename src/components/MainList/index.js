@@ -1,2 +1,2 @@
 /* eslint-disable import/no-unresolved */
-export { default } from './HeaderInfo';
+export { default } from './MainList';
