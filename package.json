@@ -10,7 +10,7 @@
     "server": "node server.js",
     "lint": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "husky": {
     "hooks": {
