@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import styles from './Search.module.scss';
 import { getSearchData } from '../../action/search';
+import { getHeaderData } from '../../action/getHeaderData';
 
 class Search extends Component {
   constructor(prop) {
@@ -21,48 +24,64 @@ class Search extends Component {
     });
   };
 
-  searchMovies = (e) => {
-    e.preventDefault();
-    this.props.postSearch(this.state.searchValue);
+  searchMovies = () => {
+    const { searchValue } = this.state;
+    const { postSearch } = this.props;
+    const { postHeaderData } = this.props;
+    postSearch(searchValue);
+    postHeaderData(searchValue);
     this.clearForm();
   }
 
   clearForm = () => {
-    document.getElementById("myForm").reset(); 
+    // document.getElementById("myForm"); ref
     this.setState({
-      searchValue: ''
-    })
+      searchValue: '',
+    });
   }
 
   render() {
+    const { searchValue } = this.state;
     return (
-      <div className={styles.three1}>
-        <section className={styles.logo}>
-          <h2> Film</h2>
-        </section>
-        <section className={styles.form_search}>
-          <form id="myForm">
-            <div className={styles.search_wrapper}>
-              <input
-                type="search"
-                placeholder="the jungle book"
-                value={this.state.searchValue}
-                onChange={this.hadleChangeInput}
-              />
-              <button className={styles.search_submit} onClick={this.searchMovies.bind(this)} />
-            </div>
-          </form>
-        </section>
-      </div>
+      <Router>
+        <div className={styles.three1}>
+          <section className={styles.logo}>
+            <h2> Films</h2>
+          </section>
+          <section className={styles.form_search}>
+            <form id="myForm">
+              <div className={styles.search_wrapper}>
+                <input
+                  type="search"
+                  placeholder="the jungle book"
+                  value={searchValue}
+                  onChange={this.hadleChangeInput}
+                />
+                <Link to={{ pathname: '/', search: `?search=${searchValue}` }}>
+                  <button className={styles.search_submit} type="submit" onClick={this.searchMovies} />
+                </Link>
+              </div>
+            </form>
+          </section>
+        </div>
+      </Router>
     );
   }
 }
 
+Search.propTypes = {
+  postSearch: PropTypes.func.isRequired,
+  postHeaderData: PropTypes.func.isRequired,
+};
+
 export default connect(
-  state => ({}),
+  () => ({}),
   dispatch => ({
-    postSearch: SearchValue => {
+    postSearch: (SearchValue) => {
       dispatch(getSearchData(SearchValue));
+    },
+    postHeaderData: (SearchValue) => {
+      dispatch(getHeaderData(SearchValue));
     },
   }),
 )(Search);

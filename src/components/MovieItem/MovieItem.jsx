@@ -1,86 +1,104 @@
-
 import React, { Component } from 'react';
-import styles from './MovieItem.module.scss';
-import Modal from '../Modal/Modal'
+import { BrowserRouter as Router } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import styles from './MovieItem.module.scss';
+import Modal from '../Modal/Modal';
 import { getDataTrailer } from '../../action/getDataTrailer';
+import { getHeaderDataItem } from '../../action/getHeaderDataItem';
+import imageError from '../../image/errorImage.jpg';
 
 class MovieItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
       itemState: true,
-      // hoverState: false,
-      discriptionState: false,
-      isModalOpen: false
+      isModalOpen: false,
     };
   }
 
-  toggleState() {
-    this.setState({ isOpepned: !this.state.isOpepned });
-  }
-
-  ClickViewButton() {
-    this.setState({ isOpepned: !this.state.isOpepned });
-    this.setState({ discriptionState: true });
-    this.setState({ itemState: false });
-  }
-
-  closeDiscription() {
-    this.setState({ discriptionState: false });
-    this.setState({ itemState: true });
-  }
-
   toggleModal = () => {
-    this.setState(state => ({isModalOpen: !state.isModalOpen}));
-    this.props.returnId(this.props.id);
-    this.setState({ discriptionState: false })
-    this.setState({ itemState: true })
+    const { returnId } = this.props;
+    const { id } = this.props;
+    this.setState(state => ({ isModalOpen: !state.isModalOpen }));
+    this.setState({
+      itemState: true,
+    });
+    returnId(id);
   };
 
-  render() {
-    const url = `https://image.tmdb.org/t/p/w400${this.props.background}`;
-    const dataItem = this.props.dataItem;
-    
-    let itemState;
+  closeDiscription() {
+    this.setState({
+      itemState: true,
+    });
+  }
 
-    if(this.state.itemState){
+  clickViewButton() {
+    const { isOpepned } = this.state;
+    const {
+      dataItem,
+      postDataItemMovie,
+    } = this.props;
+    this.setState({
+      isOpepned: !isOpepned,
+      itemState: false,
+    });
+    postDataItemMovie(dataItem);
+  }
+
+  toggleState() {
+    const { isOpepned } = this.state;
+    this.setState({ isOpepned: !isOpepned });
+  }
+
+  render() {
+    const {
+      background,
+      dataItem,
+      itemData,
+      vote_average,
+      id,
+    } = this.props;
+
+    let discription;
+    let { itemState } = this.state;
+    const { isModalOpen } = this.state;
+    const url = background ? `https://image.tmdb.org/t/p/w400${background}` : imageError;
+
+    if (itemState) {
       itemState = (
-        <section 
+        <section
           className={styles.movie_item}
         >
           <div className={styles.background_img}>
-            <img src={url} className={styles.movie_img} />
+            <img alt="movie_img" src={url} className={styles.movie_img} />
             <div className={styles.movie_hover}>
-              <button onClick={this.toggleModal} className={styles.hover_button_play} />
+              <button type="button" onClick={this.toggleModal} className={styles.hover_button_play} />
               <span className={styles.hover_watch}>Watch Now</span>
-              <button onClick={this.ClickViewButton.bind(this)} className={styles.hover_button_view}>View Info</button>
+              <button type="button" onClick={this.clickViewButton.bind(this)} className={styles.hover_button_view}>View Info</button>
             </div>
           </div>
-
           <div className={styles.movie_description}>
             <div className="movie-info">
-              <h2 className={styles.title}>{this.props.itemData}</h2>
+              <h2 className={styles.title}>{itemData}</h2>
               <ul className={styles.movie_genre}>
                 <li>Action</li>
                 <li>Drama</li>
                 <li>Comedy</li>
               </ul>
             </div>
-            <div className={styles.movie_rating}>{this.props.vote_average}</div>
+            <div className={styles.movie_rating}>{vote_average}</div>
           </div>
         </section>
-      )
+      );
     }
 
-    let discriptionState;
-
-    if (this.state.discriptionState) {
-      discriptionState = (
+    if (!itemState) {
+      discription = (
         <div className={styles.discription_item}>
-          <img src={url} alt="" className={styles.description_img} />
-          <button className={styles.description_button} onClick={this.closeDiscription.bind(this)}></button>
-          <div  className={styles.description_info} >
+          <img src={url} alt="description_image" className={styles.description_img} />
+          <button type="button" className={styles.description_button} onClick={this.closeDiscription.bind(this)} />
+          <div className={styles.description_info}>
             <section className={styles.description_header}>
               <div className={styles.description_nav}>
                 <h2>{dataItem.original_title}</h2>
@@ -95,33 +113,50 @@ class MovieItem extends Component {
             <section className={styles.main}>
               <p className={styles.discription_overview}>{dataItem.overview}</p>
             </section>
-            <button  onClick={this.toggleModal} className={styles.button_watch} >Watch Now</button>
+            <button type="button" onClick={this.toggleModal} className={styles.button_watch}>Watch Now</button>
           </div>
         </div>
-
       );
     }
 
     return (
-      <div className={styles.movie_wrapper}>
-        {itemState}
-        {discriptionState}
-          {this.state.isModalOpen &&
-              <Modal id={this.props.id} onClose={this.toggleModal}>
-              </Modal> 
-          }
-      </div>
+      <Router>
+        <div className={styles.movie_wrapper}>
+          {itemState}
+          {discription}
+          {isModalOpen
+            && <Modal id={id} onClose={this.toggleModal} />
+            }
+        </div>
+      </Router>
     );
   }
 }
 
+MovieItem.defaultProps = {
+  dataItem: [PropTypes.object],
+};
+
+MovieItem.propTypes = {
+  returnId: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
+  dataItem: PropTypes.oneOfType([
+    PropTypes.object,
+  ]),
+  postDataItemMovie: PropTypes.func.isRequired,
+  background: PropTypes.string.isRequired,
+  itemData: PropTypes.string.isRequired,
+  vote_average: PropTypes.number.isRequired,
+};
+
 export default connect(
-  state => ({}),
+  () => ({}),
   dispatch => ({
-    returnId: id => {
+    returnId: (id) => {
       dispatch(getDataTrailer(id));
+    },
+    postDataItemMovie: (dataItem) => {
+      dispatch(getHeaderDataItem(dataItem));
     },
   }),
 )(MovieItem);
-
-// export default MovieItem;

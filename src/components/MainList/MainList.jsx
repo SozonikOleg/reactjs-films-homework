@@ -1,28 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 import styles from './MainList.module.scss';
-import MovieItem from '../MovieItem/MovieItem';// eslint-disable-line
+import MovieItem from '../MovieItem/MovieItem';
 import { getSearhValue } from '../../selectors/index';
 import { getSearchData } from '../../action/search';
-
 
 class MainList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchValue: '',// eslint-disable-line
     };
   }
 
   componentDidMount() {
-    this.props.changeStore('happy');// eslint-disable-line
+    const { search } = location;
+    const params = new URLSearchParams(search);
+    const searchParam = params.get('search');
+    const { changeStore } = this.props;
+    if (searchParam) {
+      changeStore(searchParam);
+    } else {
+      changeStore('Action');
+    }
   }
 
   render() {
+    const { dataSearch } = this.props;
+    const newDataSearch = dataSearch.slice(4);
     return (
       <div className={styles.movie_list}>
-        {this.props.dataSearch.map(item => (// eslint-disable-line
+        {newDataSearch.map(item => (
           <MovieItem
             key={item.id}
             dataItem={item}
@@ -32,6 +41,10 @@ class MainList extends React.Component {
             id={item.id}
           />
         ))}
+        <div className={styles.movie_loading}>
+          <button type="button" className={styles.button_loading} />
+          <p>Loading</p>
+        </div>
       </div>
     );
   }
@@ -40,6 +53,17 @@ class MainList extends React.Component {
 const mapStateToProps = createStructuredSelector({
   dataSearch: getSearhValue,
 });
+
+MainList.defaultProps = {
+  dataSearch: [],
+};
+
+MainList.propTypes = {
+  changeStore: PropTypes.func.isRequired,
+  dataSearch: PropTypes.oneOfType([
+    PropTypes.array,
+  ]),
+};
 
 export default connect(
   mapStateToProps,
