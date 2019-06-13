@@ -64,20 +64,6 @@ describe('async actions groupe', () => {
   });
 
   it('', () => {
-    fetchMock.getOnce(`${urls.themoviedb}/movie/undefined/videos?${urls.key}&language=en-US`, { type: 'POST_DATA_BOOL', results: [1, 2, 3] });
-    const expectActions = [{
-      type: 'POST_DATA_BOOL',
-      payload: [1, 2, 3],
-    }];
-    const store = mockStore({});
-
-    store.dispatch(getDataTrailer()).then(() => {
-      const result = store.getActions();
-      expect(result).toEqual(expectActions);
-    });
-  });
-
-  it('', () => {
     const url1 = 'language=en-US&query=undefined&page=1&include_adult=false';
     const url2 = `${urls.themoviedb}/search/movie?${urls.key}&${url1}`;
     fetchMock.getOnce(url2, { results: [1, 2, 3] });
