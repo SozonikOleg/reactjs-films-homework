@@ -1,10 +1,10 @@
-import urls from '../../data/constants';
+import urls from '../data/constants';
 
 // eslint-disable-next-line import/prefer-default-export
-export const getGenre = id => (dispatch) => {
+const getGenre = id => (dispatch) => {
   const url = `${urls.themoviedb}/discover/movie?${urls.key}&with_genres=${id}`;
   // eslint-disable-next-line no-undef
-  fetch(
+  return fetch(
     url,
   )
     .then(res => res.json())
@@ -12,3 +12,5 @@ export const getGenre = id => (dispatch) => {
       dispatch({ type: 'GET_FILM_ITEMS', payload: response.results });
     });
 };
+
+export default getGenre;

@@ -7,7 +7,7 @@ import genres from '../../data/dataUrls';
 import { getTrending } from '../../action/getTrending';
 import { getTopRated } from '../../action/getTopRated';
 import { ComingSoon } from '../../action/getComingSoon';
-import { getGenre } from '../../action/GenreActionList/getGenre';
+import { getGenre } from '../../action/getGenre';
 
 class TitleMain extends Component {
   getActionData(event) {
