@@ -31,7 +31,6 @@ class ErrorBoundary extends React.Component {
     );
 
     const value = hasError ? modal : children;
-    console.log('children___', children);
     return (
       <div>
         {value}

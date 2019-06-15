@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorBoundary renders 1`] = `
+<ErrorBoundary>
+  <BrowserRouter>
+    <div
+      className="three"
+    >
+      <Memo(ConnectFunction) />
+      <Main />
+      <Footer />
+    </div>
+  </BrowserRouter>
+</ErrorBoundary>
+`;

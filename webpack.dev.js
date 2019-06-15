@@ -12,7 +12,7 @@ module.exports =  merge(common, {
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
     'webpack/hot/only-dev-server',
-    './index.js'
+    './src/components/index.js'
   ],
   output: {
     filename: '[name].bundle.js',

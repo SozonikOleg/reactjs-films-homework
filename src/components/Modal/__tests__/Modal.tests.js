@@ -1,15 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import renderer from 'react-test-renderer';
 import Modal from '../Modal';
 import store from '../../../modules/store';
 
-it('Modal renders', () => {
-  const renderer = new ShallowRenderer();
-  const result = renderer.render(
+it('рендер и обновление счётчика', () => {
+  const component = renderer.create(
     <Provider store={store}>
       <Modal />
     </Provider>,
   );
-  expect(result).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });

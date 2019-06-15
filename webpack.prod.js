@@ -10,7 +10,7 @@ module.exports =  merge.smart(common, {
     mode: 'production',
     context:path.join(__dirname, './'),
     entry:[
-      './index.js'
+      './src/components/index.js'
     ],
     watch:false,
     devtool: 'none',
