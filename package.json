@@ -4,6 +4,7 @@
   "description": "[![Build Status](https://travis-ci.com/SozonikOleg/reactjs-films-homework.svg?branch=master)](https://travis-ci.com/SozonikOleg/reactjs-films-homework)",
   "main": "index.js",
   "scripts": {
+    "now-build": "webpack --config webpack.prod.js",
     "start": "webpack --config webpack.dev.js && SET NODE_ENV=development & node server.js",
     "build": "webpack --config webpack.prod.js",
     "prod": "npm run build && SET NODE_ENV=production & node server.js",
