@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import uuidv1 from '../../../node_modules/uuid/v1';
 import styles from './TitleMain.module.scss';
 import genres from '../../data/dataUrls';
-import { getTrending } from '../../action/getTrending';
-import { getTopRated } from '../../action/getTopRated';
-import { ComingSoon } from '../../action/getComingSoon';
-import { getGenre } from '../../action/GenreActionList/getGenre';
+import getTrending from '../../action/getTrending';
+import getTopRated from '../../action/getTopRated';
+import ComingSoon from '../../action/getComingSoon';
+import getGenre from '../../action/getGenre';
 
 class TitleMain extends Component {
   getActionData(event) {
@@ -56,7 +57,7 @@ class TitleMain extends Component {
             </a>
             <ul className={styles.submenu}>
               {genres.map(link => (
-                <li>
+                <li key={uuidv1()}>
                   <a href="/" onClick={e => this.getActionData(e)}>
                     <Link to={{ pathname: '/', search: `?genre=${link.id}` }}>{link.genre}</Link>
                   </a>

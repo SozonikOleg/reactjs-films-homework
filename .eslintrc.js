@@ -23,6 +23,7 @@ module.exports = {
     "rules": {
         "no-restricted-globals": ["error", "event", "fdescribe"],
         "camelcase": ["error", {"properties": "never"}],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     },
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
 };

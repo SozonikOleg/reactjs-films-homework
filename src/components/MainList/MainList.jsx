@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect';
 import styles from './MainList.module.scss';
 import MovieItem from '../MovieItem/MovieItem';
 import { getSearhValue } from '../../selectors/index';
-import { getSearchData } from '../../action/search';
+import getSearchData from '../../action/search';
 
 class MainList extends React.Component {
   constructor(props) {

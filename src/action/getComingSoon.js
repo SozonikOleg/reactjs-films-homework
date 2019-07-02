@@ -1,11 +1,10 @@
 import urls from '../data/constants';
 
-const url = `${urls.themoviedb}/movie/upcoming?${urls.key}&language=en-US&page=1`;
-
 // eslint-disable-next-line import/prefer-default-export
-export const ComingSoon = () => (dispatch) => {
+const ComingSoon = () => (dispatch) => {
+  const url = `${urls.themoviedb}/movie/upcoming?${urls.key}&language=en-US&page=1`;
   // eslint-disable-next-line no-undef
-  fetch(
+  return fetch(
     url,
   )
     .then(res => res.json())
@@ -13,3 +12,5 @@ export const ComingSoon = () => (dispatch) => {
       dispatch({ type: 'GET_FILM_ITEMS', payload: response.results });
     });
 };
+
+export default ComingSoon;

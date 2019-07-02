@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 entry: {
-    app: './index.js'
+    app: './src/components/index.js'
 },
 plugins: [
     new CleanWebpackPlugin(),

@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieItem  1`] = `
+<div
+  style={
+    Object {
+      "BackgroundSize": "cover",
+      "MozBackgroundSize": "cover",
+      "OBackgroundSize": "cover",
+      "WebkitBackgroundSize": "cover",
+      "backgroundImage": "linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url(https://image.tmdb.org/t/p/original//aiM3XxYE2JvW1vJ4AC6cI1RjAoT.jpg)",
+      "backgroundRepeat": "no-repeat",
+      "color": "green",
+      "height": "872px",
+    }
+  }
+>
+  <div
+    className="three1"
+  >
+    <section
+      className="logo"
+    >
+      <h2>
+         Films
+      </h2>
+    </section>
+    <section
+      className="form_search"
+    >
+      <form
+        id="myForm"
+      >
+        <div
+          className="search_wrapper"
+        >
+          <input
+            onChange={[Function]}
+            placeholder="the jungle book"
+            type="search"
+            value=""
+          />
+          <a
+            href="/?search="
+            onClick={[Function]}
+          >
+            <button
+              className="search_submit"
+              onClick={[Function]}
+              type="submit"
+            />
+          </a>
+        </div>
+      </form>
+    </section>
+  </div>
+  <div
+    className="headerInfo"
+  >
+    <section
+      className="left_item"
+    >
+      <h2
+        className="title"
+      >
+        Cold Pursuit
+      </h2>
+      <div
+        className="nav_list"
+      >
+        <ul
+          className="list"
+        >
+          <li>
+            <a
+              href="./"
+            >
+              Adventure
+            </a>
+          </li>
+          <li>
+            <a
+              href="./"
+            >
+              Drama
+            </a>
+          </li>
+          <li>
+            <a
+              href="./"
+            >
+              Family
+            </a>
+          </li>
+          <li>
+            <a
+              href="./"
+            >
+              Fantasy
+            </a>
+          </li>
+        </ul>
+        <span
+          className="time"
+        >
+          1h 46 min
+        </span>
+      </div>
+      <div
+        className="list_star"
+      >
+        <li>
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-star fa-w-18 star"
+            data-icon="star"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 576 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </li>
+        <li>
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-star fa-w-18 star"
+            data-icon="star"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 576 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </li>
+        <li>
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-star fa-w-18 star"
+            data-icon="star"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 576 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </li>
+        <li>
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-star fa-w-18 star"
+            data-icon="star"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 576 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </li>
+        <li>
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-star fa-w-18 star"
+            data-icon="star"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 576 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </li>
+        <div
+          className="counter"
+        >
+          5.2
+        </div>
+      </div>
+    </section>
+    <section
+      className="right_item"
+    >
+      <div
+        className="discription_block"
+      >
+        <div
+          className="discription_wrapper"
+        >
+          <span
+            className="discription_text"
+          >
+            Nels Coxman, a snowplow driver recently awarded the title of citizen of the year, triggers a series of violence and misunderstandings between two rival gangs after he starts avenging his son\`s death
+          </span>
+        </div>
+      </div>
+      <div
+        className="bottons"
+      >
+        <button
+          className="bottons_left"
+          type="button"
+        >
+          Watch Now
+        </button>
+        <button
+          className="bottons_right"
+          type="button"
+        >
+          View info
+        </button>
+      </div>
+    </section>
+  </div>
+</div>
+`;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ErrorModal from '../ErrorModal';
+import ErrorModal from '../ErrorModal/ErrorModal';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -39,7 +39,15 @@ class ErrorBoundary extends React.Component {
   }
 }
 
+ErrorBoundary.defaultProps = {
+  children: PropTypes.oneOfType([
+    PropTypes.func,
+  ]),
+};
+
 ErrorBoundary.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.func,
+  ]),
 };
 export default ErrorBoundary;

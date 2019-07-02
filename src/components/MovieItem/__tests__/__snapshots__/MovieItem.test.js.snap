@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link changes the class when hovered 1`] = `
+<div
+  className="movie_wrapper"
+>
+  <section
+    className="movie_item"
+  >
+    <div
+      className="background_img"
+    >
+      <img
+        alt="movie_img"
+        className="movie_img"
+        src="test-file-stub"
+      />
+      <div
+        className="movie_hover"
+      >
+        <button
+          className="hover_button_play"
+          onClick={[Function]}
+          type="button"
+        />
+        <span
+          className="hover_watch"
+        >
+          Watch Now
+        </span>
+        <button
+          className="hover_button_view"
+          onClick={[Function]}
+          type="button"
+        >
+          View Info
+        </button>
+      </div>
+    </div>
+    <div
+      className="movie_description"
+    >
+      <div
+        className="movie-info"
+      >
+        <h2
+          className="title"
+        />
+        <ul
+          className="movie_genre"
+        >
+          <li>
+            Action
+          </li>
+          <li>
+            Drama
+          </li>
+          <li>
+            Comedy
+          </li>
+        </ul>
+      </div>
+      <div
+        className="movie_rating"
+      />
+    </div>
+  </section>
+</div>
+`;

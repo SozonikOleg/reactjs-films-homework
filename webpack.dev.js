@@ -5,28 +5,28 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
-module.exports =  merge(common, {
+module.exports = merge(common, {
   mode: 'development',
-  context:path.join(__dirname, './'),
-  entry:[
+  context: path.join(__dirname, './'),
+  entry: [
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
     'webpack/hot/only-dev-server',
-    './index.js'
+    './src/components/index.js',
   ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, '../build'),
-    publicPath: '/'
+    publicPath: '/',
   },
-  watch:false,
+  watch: false,
   devtool: 'inline-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({  // Also generate a test.html
+    new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/components/App/index.html'
+      template: './src/components/App/index.html',
     }),
   ],
   module: {

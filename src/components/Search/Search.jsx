@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import styles from './Search.module.scss';
-import { getSearchData } from '../../action/search';
-import { getHeaderData } from '../../action/getHeaderData';
+import getSearchData from '../../action/search';
+import getHeaderData from '../../action/getHeaderData';
 
 class Search extends Component {
   constructor(prop) {

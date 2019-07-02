@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './MovieItem.module.scss';
 import Modal from '../Modal/Modal';
-import { getDataTrailer } from '../../action/getDataTrailer';
+import getDataTrailer from '../../action/getDataTrailer';
 import { getHeaderDataItem } from '../../action/getHeaderDataItem';
 import imageError from '../../image/errorImage.jpg';
 

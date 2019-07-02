@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link changes the class when hovered 1`] = `
+<div
+  className="three1"
+>
+  <section
+    className="logo"
+  >
+    <h2>
+       Films
+    </h2>
+  </section>
+  <section
+    className="form_search"
+  >
+    <form
+      id="myForm"
+    >
+      <div
+        className="search_wrapper"
+      >
+        <input
+          onChange={[Function]}
+          placeholder="the jungle book"
+          type="search"
+          value=""
+        />
+        <a
+          href="/?search="
+          onClick={[Function]}
+        >
+          <button
+            className="search_submit"
+            onClick={[Function]}
+            type="submit"
+          />
+        </a>
+      </div>
+    </form>
+  </section>
+</div>
+`;
