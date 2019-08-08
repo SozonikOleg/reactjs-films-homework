@@ -105,7 +105,7 @@
 }
 
 .movie_genre {
-    margin-left: 23px;
+    margin-left: 9px;
     margin-top: -4px;
     li {
         list-style-type: none;
@@ -263,11 +263,26 @@
     }
 }
 
+@media (max-width: 1600px){
+    .movie_genre {
+        margin-top: 6px;
+        li {
+            margin:4px;
+            font-size: 15px;
+        }
+    }
+}
 
 @media (max-width: 1200px){
     .movie_wrapper {
         width: 31.1%;
         margin: 1%;
+    }
+    .movie_genre {
+        li {
+            margin:2px;
+            font-size: 15px;
+        }
     }
 }
 
@@ -279,8 +294,6 @@
 
     .movie_genre {
         li {
-            list-style-type: none;
-            display: inline-block;
             margin:5px;
             font-size: 18px;
         }
