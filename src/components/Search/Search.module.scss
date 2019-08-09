@@ -106,15 +106,19 @@ input::-webkit-input-placeholder {
 	}
 
 	input[type=search] {
-		width: 80%;
+		width: 72%;
 	}
 
 	input[type=search]:focus {
-		width: 80%;
+		width: 72%;
 	}
 
 	.form_search {
 		margin-right: 1px;
+	}
+	.search_wrapper {
+		margin: 20px 3px 0px 3px;
+		font-size: 12px;
 	}
 }
 

@@ -71,3 +71,44 @@
   .title_main ul li:last-child {
       border-bottom:none;
   }
+
+  @media(max-width: 960px){
+    .title_main_list {
+        display: inline-flex;
+        margin: 56px 0px 0px 2px;
+        font-size: 20px;
+        li {
+            padding-right: 10px;
+            padding-bottom: 11px;
+        }
+    }
+    .title_button1 {
+        display: none;
+    }
+    
+    .title_button2 {
+        display: none;
+    }
+  }
+
+  @media(max-width: 768px){
+    .title_main {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #c5c5c5;
+        margin: 0px;
+    }
+  }
+
+  
+@media (max-width: 480px){
+    .title_main_list {
+        display: inline-flex;
+        margin: 56px 0px 0px 2px;
+        font-size: 14px;
+        li {
+            padding-right: 2px;
+            padding-bottom: 11px;
+        }
+    }
+}
