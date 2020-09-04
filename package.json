@@ -85,7 +85,7 @@
     "image-webpack-loader": "^4.6.0",
     "jest": "^24.7.1",
     "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "prettier": "^1.16.4",
     "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.5.0",
